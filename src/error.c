@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 17:42:16 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/24 14:36:48 by yiwong           ###   ########.fr       */
+/*   Created: 2023/02/24 15:54:05 by yiwong            #+#    #+#             */
+/*   Updated: 2023/02/24 16:38:14 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	error_exit(void)
 {
-	init(argc - 1, &argv[1]);
-	e
+	ft_printf("Error\n");
+	exit(0);
 }

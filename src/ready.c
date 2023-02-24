@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ready.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 17:42:16 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/24 14:36:48 by yiwong           ###   ########.fr       */
+/*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
+/*   Updated: 2023/02/24 15:12:04 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	create_list()
 {
-	init(argc - 1, &argv[1]);
-	e
+	int		i;
+	t_list	stack_a;
+
+	if (argc <= 1)
+		exit(0);
+	stack_a = ft_lstnew(argv[1]);
+	if (!stack_a)
+		exit(0);
+	while (i <= argc)
+	{
+		
+	}
+}
+
+int	init(int argc, char *argv[])
+{
+	create_list(argc - 1, &argv[1]);
 }
