@@ -23,3 +23,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
+
+// int main(void)
+// {
+// 	int	c;
+// 	c = ft_strncmp("Hello world", "Hello Wolfsburg", 10);
+// 	printf("%d\n", c);
+// 	c = ft_strncmp("abcdefgh", "abcdwxyz", 4);
+// 	printf("%d\n", c);
+// 	c = ft_strncmp("Hello Wolfsburg", "Hello world", 10);
+// 	printf("%d\n", c);
+// }

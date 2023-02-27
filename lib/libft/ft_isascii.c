@@ -18,3 +18,16 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
+
+// int	main(void)
+// {
+// 	int	n;
+// 	n = ft_isascii('b');
+// 	printf("%d\n", n);
+// 	n = ft_isascii(3);
+// 	printf("%d\n", n);
+// 	n = ft_isascii('\e');
+// 	printf("%d\n", n);
+// 	n = ft_isascii(0x82);
+// 	printf("%d\n", n);
+// }

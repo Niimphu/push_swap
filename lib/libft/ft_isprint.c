@@ -18,3 +18,12 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
+
+// int	main(void)
+// {
+// 	int	n;
+// 	n = ft_isprint('%');
+// 	printf("%d\n", n);
+// 	n = ft_isprint('\e');
+// 	printf("%d\n", n);
+// }

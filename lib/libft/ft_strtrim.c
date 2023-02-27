@@ -6,13 +6,9 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:49:57 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:45:14 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/16 18:28:56 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*This function allocates and returns a copy of the string 's1', with any
-	consecutive characters in any combination specified in 'set' removed
-	from the beginning and the end of the string.*/
 
 #include "libft.h"
 

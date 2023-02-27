@@ -16,3 +16,16 @@ int	ft_isalnum(int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
+
+// int main(void)
+// {
+// 		int n;
+// 		n = ft_isalnum(2);
+// 		printf("%d\n", n);
+// 		n = ft_isalnum('b');
+// 		printf("%d\n", n);
+// 		n = ft_isalnum('2');
+// 		printf("%d\n", n);
+// 		n = ft_isalnum('@');
+// 		printf("%d\n", n);
+// }

@@ -6,12 +6,9 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:21:03 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:52:29 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/18 17:25:13 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* This function outputs the string 's' to the given file descriptor,
-	followed by a newline. */
 
 #include "libft.h"
 

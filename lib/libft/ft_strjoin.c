@@ -6,12 +6,9 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:53:03 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:43:52 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/25 17:35:03 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*This string allocates and returns a new string, which is the result of the
-	cocatenation of input strings 's1' and 's2'.*/
 
 #include "libft.h"
 

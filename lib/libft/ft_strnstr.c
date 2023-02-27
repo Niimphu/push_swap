@@ -32,3 +32,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+// int main(void)
+// {
+// 	char *h = "eggs bacon lettuce tomatoes cucumber";
+// 	printf("%s\n", ft_strnstr(h, "bacon", 40));
+// 	printf("%s\n", ft_strnstr(h, "", 40));
+// 	printf("%s\n", ft_strnstr(h, "bacon", 6));
+// 	printf("%s\n", ft_strnstr(h, "cheese", 40));
+// }

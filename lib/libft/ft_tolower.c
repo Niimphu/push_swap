@@ -18,3 +18,16 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
+
+// int	main(void)
+// {
+// 	char c;
+// 	c = ft_tolower('f');
+// 	printf("%c\n", c);
+// 	c = ft_tolower('T');
+// 	printf("%c\n", c);
+// 	c = ft_tolower('@');
+// 	printf("%c\n", c);
+// 	c = ft_tolower(3);
+// 	printf("%d\n", c);
+// }

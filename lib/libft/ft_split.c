@@ -6,13 +6,9 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:32:04 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:46:37 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/25 17:55:15 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*This functions allocates and returns an array of strings obtained by
-	splitting string 's' into substrings, using the character 'c' as a delimiter.
-	The array must end with a NULL pointer.*/
 
 #include "libft.h"
 

@@ -36,3 +36,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[i] = '\0';
 	return (slen);
 }
+
+// int main(void)
+// {
+// 	char *dst = malloc(sizeof(char *)*12);
+// 	const char *src = "Good evening";
+// 	printf("%ld\n", ft_strlcpy(dst, src, 7));
+// 	printf("%s\n", dst);
+// }

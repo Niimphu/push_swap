@@ -6,13 +6,9 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:13 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:48:34 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/18 16:23:10 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*This function is effectively the opposite of atoi(). It allocates memory and
-	returns a string representing the integer received as an argument.*/
-
 
 #include "libft.h"
 

@@ -6,11 +6,9 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 17:26:17 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:52:55 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/01/18 18:45:20 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/* This function outputs the integer 'n' to the given file descriptor. */
 
 #include "libft.h"
 
