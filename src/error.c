@@ -6,13 +6,16 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:54:05 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/28 17:40:41 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/01 19:30:08 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate()
+int	validate(void)
+{
+	stack_a
+}
 
 int	repeat_check(t_list lst)
 {
@@ -30,12 +33,16 @@ int	repeat_check(t_list lst)
 
 int	error_check(t_list stack_a)
 {
-	repeat_check(stack_a);
+	if (repeat_check(stack_a))
+		error_exit(stack_a);
 	ft_lstiter(stack_a, validate);
+	return (0);
 }
 
-int	error_exit(void)
+int	error_exit(t_list stack_a)
 {
+	if (stack_a)
+		ft_lstclear(stack_a, free);
 	ft_printf("Error\n");
 	exit(0);
 }
