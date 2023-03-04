@@ -6,20 +6,20 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:54:05 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/01 19:30:08 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/04 17:38:59 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate(void)
+int	validate(t_list *stack)
 {
-	stack_a
+	if (stack_a -> content
 }
 
-int	repeat_check(t_list lst)
+int	repeat_check(t_list *lst)
 {
-	t_list	last;
+	t_list	*last;
 
 	last = ft_lstlast(lst);
 	while (lst)
@@ -31,15 +31,15 @@ int	repeat_check(t_list lst)
 	return (0);
 }
 
-int	error_check(t_list stack_a)
+int	error_check(t_list *stack_a)
 {
 	if (repeat_check(stack_a))
 		error_exit(stack_a);
-	ft_lstiter(stack_a, validate);
+	validate_last(stack_a);
 	return (0);
 }
 
-int	error_exit(t_list stack_a)
+int	error_exit(t_list *stack_a)
 {
 	if (stack_a)
 		ft_lstclear(stack_a, free);
