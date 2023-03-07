@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/04 17:40:44 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/07 16:55:49 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	create_list(int argc, char *argv[])
 {
 	int		i;
 	t_list	*stack_a;
-	t_list	new;
 
 	stack_a = ft_lstnew(argv[1]);
 	validate_last(stack_a);
@@ -27,6 +26,7 @@ int	create_list(int argc, char *argv[])
 		ft_lstadd_back(stack_a, ft_lstnew(argv[i++]));
 		error_check(stack_a);
 	}
+	ft_lstmap(stack_a, ft_atoi, ft_lstdelone);
 	return (0);
 }
 

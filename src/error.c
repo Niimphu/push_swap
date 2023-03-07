@@ -6,15 +6,17 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:54:05 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/04 17:38:59 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/07 16:51:01 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	validate(t_list *stack)
+int	validate(t_list *stack_a)
 {
-	if (stack_a -> content
+	if (!ft_isdigit(stack_a -> content))
+		error_exit(stack_a);
+	return (0);
 }
 
 int	repeat_check(t_list *lst)

@@ -18,34 +18,30 @@ AR = ar rcs
 
 DEPS = ft_print.h
 
-SRC = 	ft_printf.c \
-		./libft_copy/ft_is*.c \
-		./libft_copy/ft_to*.c \
-		./libft_copy/ft_str*.c \
-		./libft_copy/ft_mem*.c \
-		./libft_copy/ft_put*.c \
-		./libft_copy/ft_atoi.c \
-		./libft_copy/ft_itoa.c \
-		./libft_copy/ft_bzero.c \
-		./libft_copy/ft_calloc.c \
-		./libft_copy/ft_substr.c \
-		./libft_copy/ft_split.c
+LIBFT = ../libft/libft.a
 
-OBJ = ./*.o *.o
+LIBFTDIR = ../libft/
 
-NAME = libftprintf.a
+SRC = $(wildcard *.c $(LIBFTDIR)/*.c)
+
+OBJ = ${SRC:.c=.o}
+
+NAME = ft_printf.a
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		$(CC) $(CFLAGS) -c $(SRC)
-		$(AR) $(NAME) $(OBJ)
+		$(AR) $(LIBFT) $(OBJ)
+		$(MAKE) -C $(LIBFTDIR)
+		$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean :
 		rm -f $(OBJ)
+		${MAKE} clean -C $(LIBFTDIR)
 
 fclean : clean
 		rm -f $(NAME)
+		${MAKE} fclean -C $(LIBFTDIR)
 
 re : fclean all
 
