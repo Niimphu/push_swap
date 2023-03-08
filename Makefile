@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/03/07 17:37:57 by yiwong           ###   ########.fr        #
+#    Updated: 2023/03/08 18:19:15 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,32 +23,33 @@ LIBFT = /lib/libft/libft.a
 
 LIBFTDIR = /lib/libft/
 
-PRINTF = /lib/ft_printf.a
+PRINTF = /lib/ft_printf/ft_printf.a
 
+PRINTFDIR = /lib/ft_printf/
 
-
-SRC =
+SRC = /src/*.c
 
 OBJ = $(SRC:.c=.o)
-
-BONUS_SRC = 
-
-BONUS_OBJ = 
 
 NAME = push_swap
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(LIB)
-		$(CC) $(CFLAGS) -c $(SRC)
+$(NAME) : $(OBJ) $(LIBFT) $(PRINTF)
+		$(CC) $(CFLAGS)  $(PRINTF) $(LIBFT) $(OBJ) -o $(NAME)
 		$(AR) $(NAME) $(OBJ)
 
-bonus : $(OBJ) $(BONUS_OBJ)
-		$(CC) $(CFLAGS) -c $(SRC) $(BONUS_SRC)
-		$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+$(OBJ)	:
+		$(CC) $(CFLAGS) $(OBJ) -c $(SRC)
+
+$(LIBFT) :
+		$(MAKE) -C $(LIBFTDIR)
+
+$(PRINTF) :
+		$(MAKE) -C $(PRINTFDIR)
 
 clean :
-		 rm -f $(OBJ) $(BONUS_OBJ)
+		 rm -f $(OBJ)
 
 fclean : clean
 		 rm -f $(NAME)
