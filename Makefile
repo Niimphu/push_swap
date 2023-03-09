@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/03/08 18:19:15 by yiwong           ###   ########.fr        #
+#    Updated: 2023/03/09 17:10:16 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,15 +19,15 @@ AR = ar rcs
 
 DEPS = push_swap.h ft_printf.h
 
-LIBFT = /lib/libft/libft.a
+LIBFT = libft.a
 
-LIBFTDIR = /lib/libft/
+LIBFTDIR = lib/libft/
 
-PRINTF = /lib/ft_printf/ft_printf.a
+PRINTF = ft_printf.a
 
-PRINTFDIR = /lib/ft_printf/
+PRINTFDIR = lib/ft_printf/
 
-SRC = /src/*.c
+SRC = $(wildcard src/*.c)
 
 OBJ = $(SRC:.c=.o)
 
@@ -36,23 +36,30 @@ NAME = push_swap
 all : $(NAME)
 
 $(NAME) : $(OBJ) $(LIBFT) $(PRINTF)
-		$(CC) $(CFLAGS)  $(PRINTF) $(LIBFT) $(OBJ) -o $(NAME)
-		$(AR) $(NAME) $(OBJ)
+		$(CC) $(CFLAGS) $(PRINTF) $(LIBFT) $(OBJ) -o $(NAME)
+#		$(AR) $(NAME) $(OBJ)
 
-$(OBJ)	:
-		$(CC) $(CFLAGS) $(OBJ) -c $(SRC)
+# $(OBJ)	:
+# 		$(CC) $(CFLAGS) -c -o $(SRC) $(OBJ)
+
+%.o: %.c $(DEPS)
+		$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT) :
 		$(MAKE) -C $(LIBFTDIR)
+		mv $(LIBFTDIR)$(LIBFT) .
 
 $(PRINTF) :
 		$(MAKE) -C $(PRINTFDIR)
+		mv $(PRINTFDIR)$(PRINTF) .
 
 clean :
 		 rm -f $(OBJ)
+		$(MAKE) clean -C $(LIBFTDIR)
+		$(MAKE) clean -C $(PRINTFDIR)
 
 fclean : clean
-		 rm -f $(NAME)
+		 rm -f $(NAME) $(LIBFT) $(PRINTF)
 
 re : fclean all
 
