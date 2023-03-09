@@ -6,11 +6,11 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:54:05 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/07 16:51:01 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/09 17:11:01 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../lib/push_swap.h"
 
 int	validate(t_list *stack_a)
 {

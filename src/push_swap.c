@@ -6,11 +6,11 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:42:16 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/07 16:02:55 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/09 17:11:05 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../lib/push_swap.h"
 
 int	main(int argc, char *argv[])
 {
