@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:54:05 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/09 17:11:01 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/12 17:55:22 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	error_check(t_list *stack_a)
 {
 	if (repeat_check(stack_a))
 		error_exit(stack_a);
-	validate_last(stack_a);
+	validate(stack_a);
 	return (0);
 }
 

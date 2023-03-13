@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/03/09 17:11:08 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/03/10 05:15:51 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	create_list(int argc, char *argv[])
 	t_list	*stack_a;
 
 	stack_a = ft_lstnew(argv[1]);
-	validate_last(stack_a);
+	validate(stack_a);
 	if (!stack_a)
 		exit(0);
 	while (i <= argc)
