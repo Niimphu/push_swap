@@ -6,15 +6,13 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/03/13 19:20:53 by yiwong           ###   ########.fr        #
+#    Updated: 2023/03/13 19:21:58 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g
-
-AR = ar rcs
 
 DEPS = push_swap.h ft_printf.h
 
@@ -36,7 +34,6 @@ all : $(NAME)
 
 $(NAME) : $(OBJ) $(LIBFT) $(PRINTF)
 		$(CC) $(CFLAGS) $(PRINTF) $(LIBFT) $(OBJ) -o $(NAME)
-#		$(AR) $(NAME) $(OBJ)
 
 # $(OBJ)	:
 # 		$(CC) $(CFLAGS) -c -o $(SRC) $(OBJ)
