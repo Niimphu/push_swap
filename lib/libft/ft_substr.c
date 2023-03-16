@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* This function allocates and returns a substring from the string 's',
+	define by the index 'start' and the maximum size 'len'.*/
+
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -25,7 +28,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = subslen;
 	r = malloc(sizeof(char) * (len + 1));
 	if (!r)
+	{
+		free(r);
+		r = NULL;
 		return (NULL);
+	}
 	str = (char *)s;
 	while (start--)
 		str++;
