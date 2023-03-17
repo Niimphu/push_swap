@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/03/13 19:21:58 by yiwong           ###   ########.fr        #
+#    Updated: 2023/03/17 17:09:36 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,10 @@ PRINTF = ft_printf.a
 
 PRINTFDIR = lib/ft_printf/
 
-SRC = $(wildcard src/*.c)
+SRC = src/push_swap.c \
+		src/ready.c \
+		src/error.c \
+		
 
 OBJ = $(SRC:.c=.o)
 
