@@ -18,16 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-
-// int	main(void)
-// {
-// 	char c;
-// 	c = ft_toupper('f');
-// 	printf("%c\n", c);
-// 	c = ft_toupper('T');
-// 	printf("%c\n", c);
-// 	c = ft_toupper('@');
-// 	printf("%c\n", c);
-// 	c = ft_toupper(3);
-// 	printf("%d\n", c);
-// }

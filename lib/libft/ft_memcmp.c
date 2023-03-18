@@ -31,14 +31,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// int main(void)
-// {
-// 	int	c;
-// 	c = ft_memcmp("Hello world", "Hello Wolfsburg", 10);
-// 	printf("%d\n", c);
-// 	c = ft_memcmp("Hello world", "Hello Wolfsburg", 6);
-// 	printf("%d\n", c);
-// 	c = ft_memcmp("Hello Wolfsburg", "Hello world", 10);
-// 	printf("%d\n", c);
-// }

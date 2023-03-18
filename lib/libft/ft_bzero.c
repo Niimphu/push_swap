@@ -26,10 +26,3 @@ void	ft_bzero(void *s, size_t n)
 	}
 	s = (void *)str;
 }
-
-// int main(void)
-// {
-// 	char *str = "Hellow wurld";
-// 	ft_bzero(str, 3);
-// 	printf("%s\n", (str + 4));
-// }

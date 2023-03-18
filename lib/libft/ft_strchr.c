@@ -27,17 +27,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + i);
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char *s = "Maybe Christmas, the Grinch thought, doesn't come from a store.";
-// 	char *out;
-// 	out = ft_strchr(s, 'm');
-// 	printf("%s\n", out);
-// 	out = ft_strchr(s, '\0');
-// 	if (out[0] == '\0')
-// 		printf("%s\n", "terminator pointer");
-// 	out = ft_strchr(s, 'V');
-// 	if (!out)
-// 		printf("%s\n", "null");
-// }

@@ -53,9 +53,3 @@ int	ft_atoi_extended(int i, char *s, int sign)
 	}
 	return (r);
 }
-
-// int main(void)
-// {
-// 	printf("%d\n", ft_atoi("-2147483648"));
-// 	printf("%d\n", ft_atoi("               +10"));
-// }
