@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/03/17 17:09:36 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/01 20:09:45 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ $(NAME) : $(OBJ) $(LIBFT) $(PRINTF)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT) :
-		$(MAKE) -C $(LIBFTDIR)
+		$(MAKE) bonus -C $(LIBFTDIR)
 		mv $(LIBFTDIR)$(LIBFT) .
 
 $(PRINTF) :
@@ -53,12 +53,12 @@ $(PRINTF) :
 		mv $(PRINTFDIR)$(PRINTF) .
 
 clean :
-		 rm -f $(OBJ)
+		 rm -f $(OBJ) $(LIBFT) $(PRINTF)
 		$(MAKE) clean -C $(LIBFTDIR)
 		$(MAKE) clean -C $(PRINTFDIR)
 
 fclean : clean
-		 rm -f $(NAME) $(LIBFT) $(PRINTF)
+		 rm -f $(NAME)
 
 re : fclean all
 
