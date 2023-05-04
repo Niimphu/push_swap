@@ -18,7 +18,7 @@ AR = ar rcs
 
 DEPS = ft_print.h
 
-SRC = $(wildcard *.c)
+SRC = ft_printf.c
 
 OBJ = ${SRC:.c=.o}
 
