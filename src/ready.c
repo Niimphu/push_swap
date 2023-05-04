@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/01 20:06:40 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/04 03:55:39 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,22 @@ int	init(int argc, char *argv[])
 
 int	create_list(int argc, char *argv[])
 {
-	int		i;
-	t_list	**stack_a;
+	int			i;
+	int_list	*stack_a;
+	int_list	*current;
 
 	i = 1;
-	stack_a = malloc(sizeof(t_list));
-	*stack_a = ft_lstnew(argv[i++]);
-	if (!*stack_a)
+	stack_a = int_list_new(argv[i++]);
+	if (!stack_a)
 		exit(0);
 	while (i < argc)
-		ft_lstadd_back(stack_a, ft_lstnew(argv[i++]));
-	// ft_lstmap(stack_a, ft_atoi, ft_lstdelone);
+		int_list_append(stack_a, int_list_new(argv[i++]));
+	current = stack_a;
+	while (current -> next)
+	{
+		ft_printf("%i\n", current -> number);
+		current = current -> next;
+	}
 	return (0);
 }
 

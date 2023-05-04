@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/01 20:09:45 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/05 00:24:12 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-DEPS = push_swap.h ft_printf.h
+DEPS = lib/push_swap.h
 
 LIBFT = libft.a
 
@@ -27,6 +27,7 @@ PRINTFDIR = lib/ft_printf/
 SRC = src/push_swap.c \
 		src/ready.c \
 		src/error.c \
+		src/ft_lstremastered.c
 		
 
 OBJ = $(SRC:.c=.o)
@@ -45,7 +46,7 @@ $(NAME) : $(OBJ) $(LIBFT) $(PRINTF)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT) :
-		$(MAKE) bonus -C $(LIBFTDIR)
+		$(MAKE) -C $(LIBFTDIR)
 		mv $(LIBFTDIR)$(LIBFT) .
 
 $(PRINTF) :
