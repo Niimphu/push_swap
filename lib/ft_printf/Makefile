@@ -22,21 +22,21 @@ SRC = $(wildcard *.c)
 
 OBJ = ${SRC:.c=.o}
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		@ $(CC) $(CFLAGS) -c $(SRC)
-		@ $(AR) $(NAME) $(OBJ)
+		@$(CC) $(CFLAGS) -c $(SRC)
+		@$(AR) $(NAME) $(OBJ) ../libft/*.o
 
 %.o: %.c
-		@ $(CC) $(CFLAGS) -c $< -o $@
+		@$(CC) $(CFLAGS) -c $< -o $@
 clean :
-		@ rm -f $(OBJ)
+		@rm -f $(OBJ)
 
 fclean : clean
-		@ rm -f $(NAME)
+		@rm -f $(NAME)
 
 re : fclean all
 

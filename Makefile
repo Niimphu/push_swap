@@ -1,66 +1,38 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/07 16:03:29 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/05 00:24:12 by yiwong           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = push_swap
 
-CC = cc
+CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g
-
-DEPS = lib/push_swap.h
-
-LIBFT = libft.a
-
-LIBFTDIR = lib/libft/
-
-PRINTF = ft_printf.a
-
-PRINTFDIR = lib/ft_printf/
-
-SRC = src/push_swap.c \
-		src/ready.c \
-		src/error.c \
-		src/ft_lstremastered.c
-		
+SRC = src/error.c \
+	src/ft_lstremastered.c \
+	src/push_swap.c \
+	src/ready.c \
 
 OBJ = $(SRC:.c=.o)
 
-NAME = push_swap
+CFLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
+LIBS = -Llib/libft -lft -Llib/ft_printf -lftprintf
 
-$(NAME) : $(OBJ) $(LIBFT) $(PRINTF)
-		$(CC) $(CFLAGS) $(PRINTF) $(LIBFT) $(OBJ) -o $(NAME)
+all: $(NAME)
 
-# $(OBJ)	:
-# 		$(CC) $(CFLAGS) -c -o $(SRC) $(OBJ)
+$(NAME): $(OBJ)
+	@make -C lib/libft
+	@make -C lib/ft_printf
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o $(NAME)
 
-%.o: %.c $(DEPS)
-		$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(LIBFT) :
-		$(MAKE) -C $(LIBFTDIR)
-		mv $(LIBFTDIR)$(LIBFT) .
+clean:
+	@make clean -C lib/libft
+	@make clean -C lib/ft_printf
+	@rm -f $(OBJ)
 
-$(PRINTF) :
-		$(MAKE) -C $(PRINTFDIR)
-		mv $(PRINTFDIR)$(PRINTF) .
+fclean: clean
+	@make fclean -C lib/libft
+	@make fclean -C lib/ft_printf
+	@rm -f $(NAME)
 
-clean :
-		 rm -f $(OBJ) $(LIBFT) $(PRINTF)
-		$(MAKE) clean -C $(LIBFTDIR)
-		$(MAKE) clean -C $(PRINTFDIR)
+re: fclean all
 
-fclean : clean
-		 rm -f $(NAME)
-
-re : fclean all
-
-.PHONY : all clean fclean re bonus
+.PHONY: all clean fclean re
