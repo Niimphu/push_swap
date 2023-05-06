@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/04 03:55:39 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/06 15:04:03 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	init(int argc, char *argv[])
 {
-	if (argc <= 1 || validate(argv) == 1)
+	if (argc <= 1 || validate(argv + 1) == 1)
 		exit(1);
-	create_list(argc, argv);
+	if (create_list(argc, argv))
+		exit(1);
 	return (0);
 }
 
@@ -24,20 +25,14 @@ int	create_list(int argc, char *argv[])
 {
 	int			i;
 	int_list	*stack_a;
-	int_list	*current;
 
 	i = 1;
 	stack_a = int_list_new(argv[i++]);
 	if (!stack_a)
-		exit(0);
+		return (ft_printf("%s: stack allocation failed\n", argv[0]));
 	while (i < argc)
 		int_list_append(stack_a, int_list_new(argv[i++]));
-	current = stack_a;
-	while (current -> next)
-	{
-		ft_printf("%i\n", current -> number);
-		current = current -> next;
-	}
+	// print_stack(stack_a);
 	return (0);
 }
 

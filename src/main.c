@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:42:16 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/01 17:57:08 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/06 14:09:49 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main(int argc, char *argv[])
 {
-	init(argc, argv + 1);
+	init(argc, argv);
 	return (0);
 }

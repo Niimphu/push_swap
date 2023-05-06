@@ -6,24 +6,25 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/05 01:55:59 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/06 14:27:12 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
-
 CC = gcc
-
-SRC = src/error.c \
-	src/ft_lstremastered.c \
-	src/push_swap.c \
-	src/ready.c \
-
-OBJ = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
+SRC = src/push_swap.c \
+	src/ready.c \
+	src/ft_lstremastered.c \
+	src/error.c \
+	src/utils.c
+
+OBJ = $(SRC:.c=.o)
+
 LIBS = -Llib/libft -lft -Llib/ft_printf -lftprintf
+
+NAME = push_swap
 
 all: $(NAME)
 
@@ -36,13 +37,11 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@make clean -C lib/libft
-	@make clean -C lib/ft_printf
+	@make fclean -C lib/libft
+	@make fclean -C lib/ft_printf
 	@rm -f $(OBJ)
 
 fclean: clean
-	@make fclean -C lib/libft
-	@make fclean -C lib/ft_printf
 	@rm -f $(NAME)
 
 re: fclean all
