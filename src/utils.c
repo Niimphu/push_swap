@@ -12,13 +12,15 @@
 
 #include "../lib/push_swap.h"
 
-void	print_stack(int_list	*stack)
+void	print_stack(int_list *stack)
 {
 	while (stack -> next)
 	{
-		ft_printf("%i, ", stack -> number);
+		ft_printf("number: %i, ", stack -> number);
+		ft_printf("index: %i\n", stack -> index);
 		stack = stack -> next;
 	}
-	ft_printf("%i\n", stack -> number);
+	ft_printf("number: %i, ", stack -> number);
+	ft_printf("index: %i\n", stack -> index);
 	return ;
 }

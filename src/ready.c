@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/06 15:04:03 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/06 19:00:59 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 int	init(int argc, char *argv[])
 {
-	if (argc <= 1 || validate(argv + 1) == 1)
+	int_list	*stack_a;
+
+	if (argc <= 1 || validate(argv + 1))
 		exit(1);
-	if (create_list(argc, argv))
+	stack_a = create_list(argc, argv);
+	if (!stack_a)
 		exit(1);
+	push_swap(stack_a);
 	return (0);
 }
 
-int	create_list(int argc, char *argv[])
+int_list	*create_list(int argc, char *argv[])
 {
 	int			i;
 	int_list	*stack_a;
@@ -29,11 +33,10 @@ int	create_list(int argc, char *argv[])
 	i = 1;
 	stack_a = int_list_new(argv[i++]);
 	if (!stack_a)
-		return (ft_printf("%s: stack allocation failed\n", argv[0]));
+		return (NULL);
 	while (i < argc)
 		int_list_append(stack_a, int_list_new(argv[i++]));
-	// print_stack(stack_a);
-	return (0);
+	return (stack_a);
 }
 
 int	validate(char * argv[])
@@ -44,15 +47,9 @@ int	validate(char * argv[])
 	while (argv[i])
 	{
 		if (!ft_isnum(argv[i]))
-		{
-			ft_printf("Invalid argument: %s\n", argv[i]);
-			return (1);
-		}
+			return (ft_printf("Invalid argument: %s\n", argv[i]));
 		if (!is_not_duplicate(argv, i))
-		{
-			ft_printf("Duplicate argument: %s\n", argv[i]);
-			return (1);
-		}
+			return (ft_printf("Duplicate argument: %s\n", argv[i]));
 		i++;
 	}
 	return (0);

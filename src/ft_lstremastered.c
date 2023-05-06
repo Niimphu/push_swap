@@ -18,6 +18,7 @@ int_list	*int_list_new(char *number_string)
 
 	new = malloc(sizeof(int_list));
 	new -> number = ft_atoi(number_string);
+	new -> index = 0;
 	new -> next = NULL;
 	return (new);
 }

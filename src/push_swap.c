@@ -12,3 +12,8 @@
 
 #include "../lib/push_swap.h"
 
+int	push_swap(int_list *stack_a)
+{
+	print_stack(stack_a);
+	return (0);
+}
