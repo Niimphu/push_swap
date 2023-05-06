@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/06 18:59:32 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/06 19:05:06 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct intlst
 
 int			init(int argc, char *argv[]);
 int_list	*create_list(int argc, char *argv[]);
+void		index_stack(int_list *stack);
+
 int			validate(char *argv[]);
 int			ft_isnum(char *str);
 int			is_not_duplicate(char *argv[], int n);

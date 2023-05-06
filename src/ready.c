@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/06 19:00:59 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/06 19:08:33 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,49 +39,16 @@ int_list	*create_list(int argc, char *argv[])
 	return (stack_a);
 }
 
-int	validate(char * argv[])
+void	index_stack(int_list *stack)
 {
-	int	i;
+	unsigned long	n;
+	int_list		*next;
 
-	i = 1;
-	while (argv[i])
+	n = 1;
+	while (!is_stack_indexed(stack))
 	{
-		if (!ft_isnum(argv[i]))
-			return (ft_printf("Invalid argument: %s\n", argv[i]));
-		if (!is_not_duplicate(argv, i))
-			return (ft_printf("Duplicate argument: %s\n", argv[i]));
-		i++;
+		next = lowest_unindexed_node(stack);
+		next -> index = n++;
 	}
-	return (0);
-}
-
-int	ft_isnum(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-')
-			i++;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == 1)
-			i++;
-		else
-			break;
-	}
-	return (str[i] ? 0 : 1);
-}
-
-int	is_not_duplicate(char *argv[], int n)
-{
-	int	i;
-
-	i = n + 1;
-	while (argv[i])
-	{
-		if (!ft_strncmp(argv[i], argv[n], 20))
-			return (0);
-		i++;
-	}
-	return (1);
+	return ;
 }
