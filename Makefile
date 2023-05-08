@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/08 13:03:20 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/08 16:54:57 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,18 @@ NAME = push_swap
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@make -C lib/libft
-	@make -C lib/ft_printf
+	@make -sC lib/libft
+	@make -sC lib/ft_printf
+	@make -sC lib/lib_me42
 	@$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o $(NAME)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@make fclean -C lib/libft
-	@make fclean -C lib/ft_printf
+	@make fclean -sC lib/libft
+	@make fclean -sC lib/ft_printf
+	@make fclean -sC lib/lib_me42
 	@rm -f $(OBJ)
 
 fclean: clean

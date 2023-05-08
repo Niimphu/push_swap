@@ -6,13 +6,13 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/06 19:06:16 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/08 16:53:33 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/push_swap.h"
 
-int	validate(char * argv[])
+int	validate(char *argv[])
 {
 	int	i;
 
@@ -57,4 +57,36 @@ int	is_not_duplicate(char *argv[], int n)
 		i++;
 	}
 	return (1);
+}
+
+int	is_stack_indexed(int_list *stack)
+{
+	if (stack -> index == 0)
+		return (0);
+	while (stack != int_list_last(stack))
+	{
+		stack = stack -> next;
+		if (stack -> index == 0)
+			return (0);
+	}
+	return (1);
+}
+
+int_list	*lowest_unindexed_node(int_list *stack)
+{
+	int_list	*ret;
+
+	while (stack -> index > 0 && stack -> next)
+		stack = stack -> next;
+	if (stack -> index == 0)
+		ret = stack;
+	else
+		return (NULL);
+	while (stack != int_list_last(stack))
+	{
+		stack = stack -> next;
+		if (stack -> number < ret -> number && stack -> index == 0)
+			ret = stack;
+	}
+	return (ret);
 }

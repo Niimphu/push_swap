@@ -12,6 +12,15 @@
 
 #include "../lib/push_swap.h"
 
+void	print_stacks(data *stacks)
+{
+	if (stacks -> stack_a)
+		print_stack(stacks -> stack_a);
+	if (stacks -> stack_b)
+		print_stack(stacks -> stack_b);
+	return ;
+}
+
 void	print_stack(int_list *stack)
 {
 	while (stack -> next)
