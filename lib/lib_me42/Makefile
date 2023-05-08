@@ -5,47 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/08 13:03:20 by yiwong           ###   ########.fr        #
+#    Created: 2023/05/08 12:24:43 by yiwong            #+#    #+#              #
+#    Updated: 2023/05/08 13:03:28 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = src/main.c \
-	src/push_swap.c \
-	src/ready.c \
-	src/ready_utils.c \
-	src/ft_lstremastered.c \
-	src/error.c \
-	src/utils.c
+AR = ar rcs
 
-OBJ = $(SRC:.c=.o)
+SRC = free_pointers.c
 
-LIBS = -Llib/libft -lft -Llib/ft_printf -lftprintf -Llib/lib_me42 -lme42
+OBJ = ${SRC:.c=.o}
 
-NAME = push_swap
+NAME = libme42.a
 
-all: $(NAME)
+all : $(NAME)
 
-$(NAME): $(OBJ)
-	@make -C lib/libft
-	@make -C lib/ft_printf
-	@$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o $(NAME)
+$(NAME) : $(OBJ)
+		@$(CC) $(CFLAGS) -c $(SRC)
+		@$(AR) $(NAME) $(OBJ)
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+		@$(CC) $(CFLAGS) -c $< -o $@
+clean :
+		@rm -f $(OBJ)
 
-clean:
-	@make fclean -C lib/libft
-	@make fclean -C lib/ft_printf
-	@rm -f $(OBJ)
+fclean : clean
+		@rm -f $(NAME)
 
-fclean: clean
-	@rm -f $(NAME)
+re : fclean all
 
-re: fclean all
-
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re
