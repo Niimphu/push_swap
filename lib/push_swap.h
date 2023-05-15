@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/08 17:09:57 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/15 15:43:38 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct	data_struct
 data		*init_stacks_struct(void);
 
 int_list	*init_stack_a(int argc, char *argv[]);
-int_list	*create_list(int argc, char *argv[]);
+int_list	*create_list(char **input);
 void		index_stack(int_list *stack);
 int			is_stack_indexed(int_list *stack);
 int_list	*lowest_unindexed_node(int_list *stack);

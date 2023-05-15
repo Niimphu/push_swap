@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/08 16:53:33 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/15 15:48:37 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_isnum(char *str)
 	int	i;
 
 	i = 0;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 			i++;
 	while (str[i])
 	{
