@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/15 15:43:38 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/15 19:17:59 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int			is_not_duplicate(char *argv[], int n);
 int_list	*int_list_new(char *number_string);
 int_list	*int_list_last(int_list *lst);
 void		int_list_append(int_list *lst, int_list *new);
+void		int_list_delete(int_list *lst);
+void		int_list_clear(int_list *stack);
 
 int			push_swap(data *stacks);
 

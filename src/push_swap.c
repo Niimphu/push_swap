@@ -15,5 +15,7 @@
 int	push_swap(data *stacks)
 {
 	print_stacks(stacks);
+	int_list_clear(stacks -> stack_a);
+	free(stacks);
 	return (0);
 }

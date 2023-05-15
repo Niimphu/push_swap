@@ -57,26 +57,15 @@ void	int_list_delete(int_list *lst)
 	return ;
 }
 
-// int_list	*ft_intlstmap(int_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-// 	int_list	*r;
-// 	int_list	*current;
+void	int_list_clear(int_list *stack)
+{
+	int_list	*next;
 
-// 	if (!lst || !f || !del)
-// 		return (NULL);
-// 	current = ft_intlstnew((*f)(lst -> content));
-// 	r = current;
-// 	lst = lst -> next;
-// 	while (lst)
-// 	{
-// 		current -> next = ft_intlstnew((*f)(lst -> content));
-// 		if (!r -> next)
-// 		{
-// 			ft_intlstdelone(r, del);
-// 			return (NULL);
-// 		}
-// 		current = current -> next;
-// 		lst = lst -> next;
-// 	}
-// 	return (r);
-// }
+	while (stack -> next)
+	{
+		next = stack -> next;
+		int_list_delete(stack);
+		stack = next;
+	}
+	int_list_delete(stack);
+}
