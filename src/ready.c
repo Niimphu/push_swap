@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:49:05 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:37:00 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int_list	*init_stack_a(int argc, char *argv[])
 		stack_a = create_list(input);
 	else
 		stack_a = NULL;
-	if (argc ==  2)
+	if (argc == 2)
 		free_ppointer(input);
 	return (stack_a);
 }
@@ -61,7 +61,7 @@ int	validate(char *input[])
 
 int_list	*create_list(char **input)
 {
-	int		i;
+	int			i;
 	int_list	*stack_a;
 
 	i = 0;

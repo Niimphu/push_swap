@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:55:32 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:03:12 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void		int_list_clear(int_list *stack);
 int			push_swap(data *stack_list);
 
 data		*swap(data *stack_list, char stack);
+data		*push(data *stack_list, char stack);
 
 long long	ft_atoll(const char *nptr);
 void		print_stack_list(data *stack_list);

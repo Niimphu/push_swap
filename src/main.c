@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:42:16 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:03:36 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:36:00 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ int	main(int argc, char *argv[])
 	push_swap(stack_list);
 	return (0);
 }
-

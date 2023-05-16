@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:56:01 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 17:36:35 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_isnum(char *str)
 		if (ft_isdigit(str[i]) == 1)
 			i++;
 		else
-			break;
+			break ;
 	}
 	if (str[i])
 		return (0);

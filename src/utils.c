@@ -12,7 +12,6 @@
 
 #include "../lib/push_swap.h"
 
-
 long long	ft_atoll_extended(int i, char *s, int sign);
 
 long long	ft_atoll(const char *nptr)
