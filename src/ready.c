@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:31:18 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:49:05 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,15 @@ int_list	*init_stack_a(int argc, char *argv[])
 	return (stack_a);
 }
 
-int	validate(char *argv[])
+int	validate(char *input[])
 {
 	int	i;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	while (input[i])
 	{
-		if (!ft_isnum(argv[i]))
-			return (ft_printf("Error\n"));
-		if (!is_not_duplicate(argv, i))
+		if (!ft_isnum(input[i]) || !is_not_duplicate(input, i) || \
+			!is_too_large(input[i]))
 			return (ft_printf("Error\n"));
 		i++;
 	}

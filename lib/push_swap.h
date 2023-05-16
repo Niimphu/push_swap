@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:16:20 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:55:32 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 # include "ft_printf/ft_printf.h"
 # include "lib_me42/lib_me42.h"
 # include <stdlib.h>
+# include <limits.h>
 
-# define a 'a'
-# define b 'b'
-# define s 's'
+# define A 'a'
+# define B 'b'
+# define S 's'
 
 typedef struct	int_lst
 {
@@ -36,15 +37,15 @@ typedef struct	data_struct
 }				data;
 
 data		*init_stacks_struct(void);
-
 int_list	*init_stack_a(int argc, char *argv[]);
+int			validate(char *input[]);
 int_list	*create_list(char **input);
 void		index_stack(int_list *stack);
+
+int			is_too_large(char *str);
+int			ft_isnum(char *str);
 int			is_stack_indexed(int_list *stack);
 int_list	*lowest_unindexed_node(int_list *stack);
-
-int			validate(char *argv[]);
-int			ft_isnum(char *str);
 int			is_not_duplicate(char *argv[], int n);
 
 int_list	*int_list_new(char *number_string);
@@ -57,7 +58,7 @@ int			push_swap(data *stack_list);
 
 data		*swap(data *stack_list, char stack);
 
-
+long long	ft_atoll(const char *nptr);
 void		print_stack_list(data *stack_list);
 void		print_stack(int_list *stack);
 

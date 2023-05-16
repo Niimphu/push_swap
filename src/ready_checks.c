@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ready_utils.c                                      :+:      :+:    :+:   */
+/*   ready_checks.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 16:30:49 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:56:01 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/push_swap.h"
 
+int	is_too_large(char *str)
+{
+	if (ft_atoll(str) > INT_MAX || ft_atoll(str) < INT_MIN)
+		return (0);
+	return (1);
+}
 
 int	ft_isnum(char *str)
 {
@@ -27,7 +33,10 @@ int	ft_isnum(char *str)
 		else
 			break;
 	}
-	return (str[i] ? 0 : 1);
+	if (str[i])
+		return (0);
+	else
+		return (1);
 }
 
 int	is_not_duplicate(char *argv[], int n)

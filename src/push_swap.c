@@ -15,7 +15,7 @@
 int	push_swap(data *stack_list)
 {
 	print_stack_list(stack_list);
-	swap(stack_list, a);
+	swap(stack_list, A);
 	print_stack_list(stack_list);
 	int_list_clear(stack_list -> stack_a);
 	free(stack_list);
