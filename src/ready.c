@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/15 15:44:27 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:31:18 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 data	*init_stacks_struct(void)
 {
-	data	*stacks;
+	data	*stack_list;
 
-	stacks = malloc(sizeof(data));
-	if (!stacks)
+	stack_list = malloc(sizeof(data));
+	if (!stack_list)
 		return (NULL);
-	stacks -> stack_a = NULL;
-	stacks -> stack_b = NULL;
-	return (stacks);
+	stack_list -> stack_a = NULL;
+	stack_list -> stack_b = NULL;
+	return (stack_list);
 }
 
 int_list	*init_stack_a(int argc, char *argv[])
@@ -30,10 +30,7 @@ int_list	*init_stack_a(int argc, char *argv[])
 	char		**input;
 
 	if (argc <= 1)
-	{
-		ft_printf("Not enough arguments\n");
 		return (NULL);
-	}
 	if (argc == 2)
 		input = ft_split(argv[1], ' ');
 	else
@@ -45,6 +42,22 @@ int_list	*init_stack_a(int argc, char *argv[])
 	if (argc ==  2)
 		free_ppointer(input);
 	return (stack_a);
+}
+
+int	validate(char *argv[])
+{
+	int	i;
+
+	i = 1;
+	while (argv[i])
+	{
+		if (!ft_isnum(argv[i]))
+			return (ft_printf("Error\n"));
+		if (!is_not_duplicate(argv, i))
+			return (ft_printf("Error\n"));
+		i++;
+	}
+	return (0);
 }
 
 int_list	*create_list(char **input)

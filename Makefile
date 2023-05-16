@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/08 16:54:57 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/16 16:32:54 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = src/main.c \
 	src/push_swap.c \
 	src/ready.c \
-	src/ready_utils.c \
+	src/ready_checks.c \
 	src/ft_lstremastered.c \
+	src/commands.c \
 	src/error.c \
 	src/utils.c
 

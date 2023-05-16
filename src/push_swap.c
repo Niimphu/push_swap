@@ -12,10 +12,12 @@
 
 #include "../lib/push_swap.h"
 
-int	push_swap(data *stacks)
+int	push_swap(data *stack_list)
 {
-	print_stacks(stacks);
-	int_list_clear(stacks -> stack_a);
-	free(stacks);
+	print_stack_list(stack_list);
+	swap(stack_list, a);
+	print_stack_list(stack_list);
+	int_list_clear(stack_list -> stack_a);
+	free(stack_list);
 	return (0);
 }

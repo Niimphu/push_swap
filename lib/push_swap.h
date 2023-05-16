@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/15 19:17:59 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:16:20 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include "ft_printf/ft_printf.h"
 # include "lib_me42/lib_me42.h"
 # include <stdlib.h>
+
+# define a 'a'
+# define b 'b'
+# define s 's'
 
 typedef struct	int_lst
 {
@@ -49,9 +53,12 @@ void		int_list_append(int_list *lst, int_list *new);
 void		int_list_delete(int_list *lst);
 void		int_list_clear(int_list *stack);
 
-int			push_swap(data *stacks);
+int			push_swap(data *stack_list);
 
-void		print_stacks(data *stacks);
+data		*swap(data *stack_list, char stack);
+
+
+void		print_stack_list(data *stack_list);
 void		print_stack(int_list *stack);
 
 #endif

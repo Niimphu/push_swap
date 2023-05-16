@@ -6,27 +6,12 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/15 15:48:37 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:30:49 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/push_swap.h"
 
-int	validate(char *argv[])
-{
-	int	i;
-
-	i = 1;
-	while (argv[i])
-	{
-		if (!ft_isnum(argv[i]))
-			return (ft_printf("Invalid argument: %s\n", argv[i]));
-		if (!is_not_duplicate(argv, i))
-			return (ft_printf("Duplicate argument: %s\n", argv[i]));
-		i++;
-	}
-	return (0);
-}
 
 int	ft_isnum(char *str)
 {
