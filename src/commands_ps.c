@@ -19,7 +19,7 @@ data	*swap(data *stack_list, char stack)
 	int_list	*to_first;
 	int_list	*current;
 
-	if (stack != X)
+	if (stack != B_SWAP)
 		ft_printf("s%c\n", stack);
 	if (stack == B || stack == S)
 		swap(stack_list, B_SWAP);
@@ -69,7 +69,6 @@ int_list	*push_extended(int_list *stack_1, int_list *stack_2)
 	int_list	*pushed;
 
 	pushed = stack_1;
-	stack_1 = pushed -> next;
 	if (!stack_2)
 	{
 		pushed -> next = NULL;
