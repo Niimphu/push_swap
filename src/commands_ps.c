@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:59 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 23:45:57 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/17 00:13:05 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int_list	*push_extended(int_list *stack_1, int_list *stack_2)
 	}
 	return (stack_2);
 }
-
+// TODO:
 // data	*rotate(data *stack_list, char stack)
 // {
 // 	if ()
