@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 17:43:15 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/16 23:47:09 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 # define A 'a'
 # define B 'b'
 # define S 's'
+# define B_SWAP 'x'
 
-typedef struct	int_lst
+typedef struct int_lst
 {
 	int				number;
 	unsigned long	index;
