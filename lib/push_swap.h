@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 23:47:09 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/17 05:18:07 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 # define A 'a'
 # define B 'b'
 # define S 's'
-# define B_SWAP 'x'
+# define B_RECURSIVE 'x'
+# define R 'r'
 
 typedef struct int_lst
 {

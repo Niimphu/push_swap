@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:59 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/17 00:13:05 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/17 05:18:00 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ data	*swap(data *stack_list, char stack)
 	int_list	*to_first;
 	int_list	*current;
 
-	if (stack != B_SWAP)
+	if (stack != B_RECURSIVE)
 		ft_printf("s%c\n", stack);
 	if (stack == B || stack == S)
-		swap(stack_list, B_SWAP);
+		swap(stack_list, B_RECURSIVE);
 	if (stack == A || stack == S)
 		current = stack_list -> stack_a;
-	else if (stack == B_SWAP)
+	else if (stack == B_RECURSIVE)
 		current = stack_list -> stack_b;
 	else
 		return (stack_list);
@@ -82,7 +82,17 @@ int_list	*push_extended(int_list *stack_1, int_list *stack_2)
 	return (stack_2);
 }
 // TODO:
-// data	*rotate(data *stack_list, char stack)
-// {
-// 	if ()
-// }
+data	*rotate(data *stack_list, char stack)
+{
+	int_list *to_first;
+	int_list *last;
+
+	to_first = int_list_last(stack_list -> stack_a);
+	last = stack_list -> stack_a;
+	while (last -> next != to_first)
+		last = last -> next;
+	to_first = stack_list -> stack_a;
+	stack_list -> stack_a = to_first;
+	
+	if (stack == A || stack == R)
+}
