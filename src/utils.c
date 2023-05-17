@@ -54,7 +54,7 @@ long long	ft_atoll_extended(int i, char *s, int sign)
 	return (r);
 }
 
-void	print_stack_list(data *stack_list)
+void	print_stack_list(t_data *stack_list)
 {
 	if (stack_list -> stack_a)
 	{
@@ -69,7 +69,7 @@ void	print_stack_list(data *stack_list)
 	return ;
 }
 
-void	print_stack(int_list *stack)
+void	print_stack(t_int_list *stack)
 {
 	while (stack -> next)
 	{

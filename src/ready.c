@@ -6,17 +6,17 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 17:37:00 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/17 15:52:12 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib/push_swap.h"
 
-data	*init_stacks_struct(void)
+t_data	*init_stacks_struct(void)
 {
-	data	*stack_list;
+	t_data	*stack_list;
 
-	stack_list = malloc(sizeof(data));
+	stack_list = malloc(sizeof(t_data));
 	if (!stack_list)
 		return (NULL);
 	stack_list -> stack_a = NULL;
@@ -24,9 +24,9 @@ data	*init_stacks_struct(void)
 	return (stack_list);
 }
 
-int_list	*init_stack_a(int argc, char *argv[])
+t_int_list	*init_stack_a(int argc, char *argv[])
 {
-	int_list	*stack_a;
+	t_int_list	*stack_a;
 	char		**input;
 
 	if (argc <= 1)
@@ -59,10 +59,10 @@ int	validate(char *input[])
 	return (0);
 }
 
-int_list	*create_list(char **input)
+t_int_list	*create_list(char **input)
 {
 	int			i;
-	int_list	*stack_a;
+	t_int_list	*stack_a;
 
 	i = 0;
 	stack_a = int_list_new(input[i++]);
@@ -74,10 +74,10 @@ int_list	*create_list(char **input)
 	return (stack_a);
 }
 
-void	index_stack(int_list *stack)
+void	index_stack(t_int_list *stack)
 {
 	unsigned long	n;
-	int_list		*next;
+	t_int_list		*next;
 
 	n = 1;
 	while (!is_stack_indexed(stack))

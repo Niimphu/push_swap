@@ -12,18 +12,18 @@
 
 #include "../lib/push_swap.h"
 
-int_list	*int_list_new(char *number_string)
+t_int_list	*int_list_new(char *number_string)
 {
-	int_list	*new;
+	t_int_list	*new;
 
-	new = malloc(sizeof(int_list));
+	new = malloc(sizeof(t_int_list));
 	new -> number = ft_atoi(number_string);
 	new -> index = 0;
 	new -> next = NULL;
 	return (new);
 }
 
-int_list	*int_list_last(int_list *lst)
+t_int_list	*int_list_last(t_int_list *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -32,9 +32,9 @@ int_list	*int_list_last(int_list *lst)
 	return (lst);
 }
 
-void	int_list_append(int_list *lst, int_list *new)
+void	int_list_append(t_int_list *lst, t_int_list *new)
 {
-	int_list	*last;
+	t_int_list	*last;
 
 	if (!lst || !new)
 		return ;
@@ -48,7 +48,7 @@ void	int_list_append(int_list *lst, int_list *new)
 	return ;
 }
 
-void	int_list_delete(int_list *lst)
+void	int_list_delete(t_int_list *lst)
 {
 	if (!lst)
 		return ;
@@ -57,9 +57,9 @@ void	int_list_delete(int_list *lst)
 	return ;
 }
 
-void	int_list_clear(int_list *stack)
+void	int_list_clear(t_int_list *stack)
 {
-	int_list	*next;
+	t_int_list	*next;
 
 	while (stack -> next)
 	{

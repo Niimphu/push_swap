@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:42:16 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/16 17:36:00 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/17 15:36:34 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
-	data	*stack_list;
+	t_data	*stack_list;
 
 	stack_list = init_stacks_struct();
 	if (!stack_list)

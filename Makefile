@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/16 23:17:34 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/17 17:11:08 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC = src/main.c \
 	src/ready_checks.c \
 	src/ft_lstremastered.c \
 	src/commands_ps.c \
+	src/commands_r.c \
 	src/error.c \
 	src/utils.c
 
