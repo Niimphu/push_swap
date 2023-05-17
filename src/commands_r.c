@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:02:31 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/17 17:22:34 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/17 19:52:51 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_data	*rotate(t_data *stack_list, char stack_id)
 		stack_list -> stack_a = rotater(stack_list -> stack_a);
 	if (stack_id == B || stack_id == R)
 		stack_list -> stack_b = rotater(stack_list -> stack_b);
+	ft_printf("r%c\n", stack_id);
 	return (stack_list);
 }
 
@@ -39,6 +40,7 @@ t_data	*reverse_rotate(t_data *stack_list, char stack_id)
 		stack_list -> stack_a = reverse_rotater(stack_list -> stack_a);
 	if (stack_id == B || stack_id == R)
 		stack_list -> stack_b = reverse_rotater(stack_list -> stack_b);
+	ft_printf("rr%c\n", stack_id);
 	return (stack_list);
 }
 
