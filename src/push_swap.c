@@ -12,35 +12,45 @@
 
 #include "../lib/push_swap.h"
 
-int	push_swap(t_data *stack_list)
+int	push_swap(t_data *set)
 {
 	int	count;
 	
-	if (is_sorted(stack_list -> stack_a))
+	// print_set(set);
+	if (is_sorted(set -> stack_a))
 		return (0);
-	count = list_size(stack_list -> stack_a);
+	count = list_size(set -> stack_a);
 	if (count == 2)
-		(stack_list = swap(stack_list, A));
+		(set = swap(set, A));
 	else if (count == 3)
-		stack_list = sort_three(stack_list);
-	// print_stack(stack_list -> stack_a);
-	int_list_clear(stack_list -> stack_a);
-	free(stack_list);
+		set = sort_three(set);
+	else
+		set = sort_list(set, count);
+	// print_set(set);
+	int_list_clear(set -> stack_a);
+	free(set);
 	return (0);
 }
 
-t_data	*sort_three(t_data *stack_list)
+t_data	*sort_three(t_data *set)
 {
 	t_int_list	*stack;
 
-	stack = stack_list -> stack_a;
+	stack = set -> stack_a;
 	if (stack -> number > (stack -> next)-> index &&
 		stack -> number > ((stack -> next)-> next)-> index)
-		stack_list = rotate(stack_list, A);
+		set = rotate(set, A);
 	else if (stack -> number < (stack -> next)-> index &&
 		(stack -> next)-> number > ((stack -> next)-> next)-> index)
-		stack_list = reverse_rotate(stack_list, A);
-	if (!is_sorted(stack_list -> stack_a))
-		stack_list = swap(stack_list, A);
-	return (stack_list);
+		set = reverse_rotate(set, A);
+	if (!is_sorted(set -> stack_a))
+		set = swap(set, A);
+	return (set);
+}
+
+t_data	*sort_list(t_data *set, int count)
+{
+	push_halves(set, count);
+	set = sort_three(set);
+	return (set);
 }

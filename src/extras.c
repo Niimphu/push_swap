@@ -12,18 +12,19 @@
 
 #include "../lib/push_swap.h"
 
-void	print_stack_list(t_data *stack_list)
+void	print_set(t_data *set)
 {
-	if (stack_list -> stack_a)
+	if (set -> stack_a)
 	{
 		ft_printf("  ---STACK A---\n");
-		print_stack(stack_list -> stack_a);
+		print_stack(set -> stack_a);
 	}
-	if (stack_list -> stack_b)
+	if (set -> stack_b)
 	{
 		ft_printf("  ---STACK B---\n");
-		print_stack(stack_list -> stack_b);
+		print_stack(set -> stack_b);
 	}
+	ft_printf("  -------------   \n");
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/18 05:59:24 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/18 20:01:46 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ typedef struct s_data
 	t_int_list	*stack_b;
 }				t_data;
 
+typedef enum
+{
+	LOWER,
+	UPPER
+}	e_status;
+
 t_data		*init_stacks_struct(void);
 t_int_list	*init_stack_a(int argc, char *argv[]);
 int			validate(char *input[]);
@@ -57,24 +63,28 @@ void		int_list_append(t_int_list *lst, t_int_list *new);
 void		int_list_delete(t_int_list *lst);
 void		int_list_clear(t_int_list *stack);
 
-int			push_swap(t_data *stack_list);
-t_data		*sort_three(t_data *stack_list);
+int			push_swap(t_data *set);
+t_data		*sort_three(t_data *set);
+t_data		*sort_list(t_data *set, int count);
 
-t_data		*swap(t_data *stack_list, char stack_id);
+t_data		*push_halves(t_data *set, int count);
+e_status	push_bulk(t_data *set, const int half_i, e_status status);
+
+t_data		*swap(t_data *set, char stack_id);
 t_int_list	*swapper(t_int_list *stack);
-t_data		*push(t_data *stack_list, char stack_id);
+t_data		*push(t_data *set, char stack_id);
 t_int_list	*pusher(t_int_list *stack_1, t_int_list *stack_2);
 
-t_data		*rotate(t_data *stack_list, char stack_id);
+t_data		*rotate(t_data *set, char stack_id);
 t_int_list	*rotater(t_int_list *stack);
-t_data		*reverse_rotate(t_data *stack_list, char stack_id);
+t_data		*reverse_rotate(t_data *set, char stack_id);
 t_int_list	*reverse_rotater(t_int_list *stack);
 
 long long	ft_atoll(const char *nptr);
 int			is_sorted(t_int_list *stack);
 int			list_size(t_int_list *stack);
 
-void		print_stack_list(t_data *stack_list);
+void		print_set(t_data *set);
 void		print_stack(t_int_list *stack);
 
 #endif

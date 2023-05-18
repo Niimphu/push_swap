@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/18 05:55:39 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/18 19:47:29 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_data	*init_stacks_struct(void)
 {
-	t_data	*stack_list;
+	t_data	*set;
 
-	stack_list = malloc(sizeof(t_data));
-	if (!stack_list)
+	set = malloc(sizeof(t_data));
+	if (!set)
 		return (NULL);
-	stack_list -> stack_a = NULL;
-	stack_list -> stack_b = NULL;
-	return (stack_list);
+	set -> stack_a = NULL;
+	set -> stack_b = NULL;
+	return (set);
 }
 
 t_int_list	*init_stack_a(int argc, char *argv[])
