@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/17 17:11:08 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/17 19:49:58 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC = src/main.c \
 	src/commands_ps.c \
 	src/commands_r.c \
 	src/error.c \
-	src/utils.c
+	src/utils.c \
+	src/extras.c
 
 OBJ = $(SRC:.c=.o)
 

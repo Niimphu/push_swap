@@ -6,9 +6,11 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/17 17:12:35 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/18 05:59:24 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Violet Midnight
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
@@ -24,15 +26,10 @@
 # define S 's'
 # define R 'r'
 
-// typedef enum {
-// 	A = "a",
-// 	B = "b"
-// }
-
 typedef struct s_int_list
 {
 	int					number;
-	unsigned long		index;
+	int					index;
 	struct s_int_list	*next;
 }						t_int_list;
 
@@ -61,6 +58,7 @@ void		int_list_delete(t_int_list *lst);
 void		int_list_clear(t_int_list *stack);
 
 int			push_swap(t_data *stack_list);
+t_data		*sort_three(t_data *stack_list);
 
 t_data		*swap(t_data *stack_list, char stack_id);
 t_int_list	*swapper(t_int_list *stack);
@@ -72,8 +70,10 @@ t_int_list	*rotater(t_int_list *stack);
 t_data		*reverse_rotate(t_data *stack_list, char stack_id);
 t_int_list	*reverse_rotater(t_int_list *stack);
 
-
 long long	ft_atoll(const char *nptr);
+int			is_sorted(t_int_list *stack);
+int			list_size(t_int_list *stack);
+
 void		print_stack_list(t_data *stack_list);
 void		print_stack(t_int_list *stack);
 

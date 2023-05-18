@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/17 15:52:12 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/18 05:55:39 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ t_int_list	*create_list(char **input)
 
 void	index_stack(t_int_list *stack)
 {
-	unsigned long	n;
-	t_int_list		*next;
+	int			n;
+	t_int_list	*next;
 
 	n = 1;
 	while (!is_stack_indexed(stack))

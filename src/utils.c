@@ -54,30 +54,33 @@ long long	ft_atoll_extended(int i, char *s, int sign)
 	return (r);
 }
 
-void	print_stack_list(t_data *stack_list)
+int	is_sorted(t_int_list *stack)
 {
-	if (stack_list -> stack_a)
-	{
-		ft_printf("  ---STACK A---\n");
-		print_stack(stack_list -> stack_a);
-	}
-	if (stack_list -> stack_b)
-	{
-		ft_printf("  ---STACK B---\n");
-		print_stack(stack_list -> stack_b);
-	}
-	return ;
-}
+	int	i;
 
-void	print_stack(t_int_list *stack)
-{
-	while (stack -> next)
+	i = 1;
+	while (stack != int_list_last(stack))
 	{
-		ft_printf("number: %i, ", stack -> number);
-		ft_printf("index: %i\n", stack -> index);
+		if (stack -> number != i++)
+			return (0);
 		stack = stack -> next;
 	}
-	ft_printf("number: %i, ", stack -> number);
-	ft_printf("index: %i\n", stack -> index);
-	return ;
+	if (stack -> number != i++)
+		return (0);
+	return (1);
+}
+
+int	list_size(t_int_list *stack)
+{
+	int	n;
+
+	if (!stack)
+		return (0);
+	n = 1;
+	while (stack -> next)
+	{
+		stack = stack -> next;
+		n++;
+	}
+	return (n);
 }
