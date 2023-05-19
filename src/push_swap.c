@@ -48,6 +48,7 @@ t_data	*sort_three(t_data *set)
 	return (set);
 }
 
+//TODO:
 t_data	*sort_list(t_data *set, int count)
 {
 	push_bulk(set, count);
