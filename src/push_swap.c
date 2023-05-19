@@ -16,7 +16,7 @@ int	push_swap(t_data *set)
 {
 	int	count;
 	
-	// print_set(set);
+	print_set(set);
 	if (is_sorted(set -> stack_a))
 		return (0);
 	count = list_size(set -> stack_a);
@@ -26,7 +26,7 @@ int	push_swap(t_data *set)
 		set = sort_three(set);
 	else
 		set = sort_list(set, count);
-	// print_set(set);
+	print_set(set);
 	int_list_clear(set -> stack_a);
 	free(set);
 	return (0);
@@ -37,20 +37,20 @@ t_data	*sort_three(t_data *set)
 	t_int_list	*stack;
 
 	stack = set -> stack_a;
-	if (stack -> number > (stack -> next)-> index &&
-		stack -> number > ((stack -> next)-> next)-> index)
+	if (stack -> index > (stack -> next)-> index &&
+		stack -> index > ((stack -> next)-> next)-> index)
 		set = rotate(set, A);
-	else if (stack -> number < (stack -> next)-> index &&
-		(stack -> next)-> number > ((stack -> next)-> next)-> index)
+	else if (stack -> index < (stack -> next)-> index &&
+		(stack -> next)-> index > ((stack -> next)-> next)-> index)
 		set = reverse_rotate(set, A);
-	if (!is_sorted(set -> stack_a))
+	if (!is_ordered(set -> stack_a))
 		set = swap(set, A);
 	return (set);
 }
 
 t_data	*sort_list(t_data *set, int count)
 {
-	push_halves(set, count);
+	push_bulk(set, count);
 	set = sort_three(set);
 	return (set);
 }

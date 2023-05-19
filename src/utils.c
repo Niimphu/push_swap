@@ -61,11 +61,28 @@ int	is_sorted(t_int_list *stack)
 	i = 1;
 	while (stack != int_list_last(stack))
 	{
-		if (stack -> number != i++)
+		if (stack -> index != i++)
 			return (0);
 		stack = stack -> next;
 	}
-	if (stack -> number != i++)
+	if (stack -> index != i++)
+		return (0);
+	return (1);
+}
+
+int	is_ordered(t_int_list *stack)
+{
+	t_int_list	*next;
+
+	next = stack -> next;
+	while (next -> next)
+	{
+		if (stack -> index > next -> index)
+			return (0);
+		stack = next;
+		next = stack -> next;
+	}
+	if (stack -> index > next -> index)
 		return (0);
 	return (1);
 }
