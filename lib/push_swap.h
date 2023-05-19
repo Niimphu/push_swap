@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/19 06:11:10 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/19 19:08:05 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int			push_swap(t_data *set);
 t_data		*sort_three(t_data *set);
 t_data		*sort_list(t_data *set, int count);
 
-t_data		*push_bulk(t_data *set, int count);
-t_data		*push_third(t_data *set, const int target_i);
+t_data		*push_in_chunks(t_data *set, int count);
+t_data		*push_next_in_chunk(t_data *set, const int target_i);
 
 t_data		*swap(t_data *set, char stack_id);
 t_int_list	*swapper(t_int_list *stack);
