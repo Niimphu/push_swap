@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/18 19:47:29 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/20 17:55:47 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_data	*init_stacks_struct(void)
 	return (set);
 }
 
-t_int_list	*init_stack_a(int argc, char *argv[])
+t_stack	*init_stack_a(int argc, char *argv[])
 {
-	t_int_list	*stack_a;
+	t_stack	*stack_a;
 	char		**input;
 
 	if (argc <= 1)
@@ -59,25 +59,25 @@ int	validate(char *input[])
 	return (0);
 }
 
-t_int_list	*create_list(char **input)
+t_stack	*create_list(char **input)
 {
 	int			i;
-	t_int_list	*stack_a;
+	t_stack	*stack_a;
 
 	i = 0;
-	stack_a = int_list_new(input[i++]);
+	stack_a = new_stack_node(input[i++]);
 	if (!stack_a)
 		return (NULL);
 	while (input[i])
-		int_list_append(stack_a, int_list_new(input[i++]));
+		stack_append(stack_a, new_stack_node(input[i++]));
 	index_stack(stack_a);
 	return (stack_a);
 }
 
-void	index_stack(t_int_list *stack)
+void	index_stack(t_stack *stack)
 {
 	int			n;
-	t_int_list	*next;
+	t_stack	*next;
 
 	n = 1;
 	while (!is_stack_indexed(stack))

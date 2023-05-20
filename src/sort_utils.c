@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:43:42 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/19 19:08:01 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/20 18:44:06 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,23 @@ t_data	*push_next_in_chunk(t_data *set, const int target_i)
 		set = rotate(set, A);
 	set = push(set, B);
 	return (set);
+}
+
+t_stack	*find_distances(t_stack *stack)
+{
+	t_stack	*temp;
+	int		distance_up;
+	int		count;
+
+	temp = stack;
+	count = list_size(temp);
+	distance_up = 0;
+	while (temp)
+	{
+		temp -> distance_up = distance_up;
+		temp -> distance_down = count - distance_up;
+		temp = temp -> next;
+		distance_up++;		
+	}
+	return (stack);
 }

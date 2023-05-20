@@ -28,15 +28,13 @@ void	print_set(t_data *set)
 	return ;
 }
 
-void	print_stack(t_int_list *stack)
+void	print_stack(t_stack *stack)
 {
-	while (stack -> next)
+	while (stack)
 	{
 		ft_printf("number: %i, ", stack -> number);
-		ft_printf("index: %i\n", stack -> index);
+		ft_printf("index: %i ", stack -> index);
 		stack = stack -> next;
 	}
-	ft_printf("number: %i, ", stack -> number);
-	ft_printf("index: %i\n", stack -> index);
 	return ;
 }

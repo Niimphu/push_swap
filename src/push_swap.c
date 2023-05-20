@@ -27,14 +27,14 @@ int	push_swap(t_data *set)
 	else
 		set = sort_list(set, count);
 	print_set(set);
-	int_list_clear(set -> stack_a);
+	stack_clear(set -> stack_a);
 	free(set);
 	return (0);
 }
 
 t_data	*sort_three(t_data *set)
 {
-	t_int_list	*stack;
+	t_stack	*stack;
 
 	stack = set -> stack_a;
 	if (stack -> index > (stack -> next)-> index &&
@@ -53,5 +53,16 @@ t_data	*sort_list(t_data *set, int count)
 {
 	push_in_chunks(set, count);
 	set = sort_three(set);
+	set -> stack_a = find_distances(set -> stack_a);
+	set -> stack_b = find_distances(set -> stack_b);
+	// while(set -> stack_b)
+	// 	set = pull_cheapest(set);
+	return (set);
+}
+
+t_data	*pull_cheapest(t_data *set)
+{
+	set -> stack_b = find_distances(set -> stack_b);
+	
 	return (set);
 }

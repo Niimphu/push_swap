@@ -12,18 +12,22 @@
 
 #include "../lib/push_swap.h"
 
-t_int_list	*int_list_new(char *number_string)
+t_stack	*new_stack_node(char *number_string)
 {
-	t_int_list	*new;
+	t_stack	*new;
 
-	new = malloc(sizeof(t_int_list));
+	new = malloc(sizeof(t_stack));
 	new -> number = ft_atoi(number_string);
 	new -> index = 0;
+	new -> distance_up = -1;
+	new -> distance_down = -1;
+	new -> cost[0] = -1;
+	new -> cost[1] = -1;
 	new -> next = NULL;
 	return (new);
 }
 
-t_int_list	*int_list_last(t_int_list *lst)
+t_stack	*stack_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -32,9 +36,9 @@ t_int_list	*int_list_last(t_int_list *lst)
 	return (lst);
 }
 
-void	int_list_append(t_int_list *lst, t_int_list *new)
+void	stack_append(t_stack *lst, t_stack *new)
 {
-	t_int_list	*last;
+	t_stack	*last;
 
 	if (!lst || !new)
 		return ;
@@ -43,12 +47,12 @@ void	int_list_append(t_int_list *lst, t_int_list *new)
 		lst = new;
 		return ;
 	}
-	last = int_list_last(lst);
+	last = stack_last(lst);
 	last -> next = new;
 	return ;
 }
 
-void	int_list_delete(t_int_list *lst)
+void	stack_node_delete(t_stack *lst)
 {
 	if (!lst)
 		return ;
@@ -57,15 +61,16 @@ void	int_list_delete(t_int_list *lst)
 	return ;
 }
 
-void	int_list_clear(t_int_list *stack)
+void	stack_clear(t_stack *stack)
 {
-	t_int_list	*next;
+	t_stack	*next;
 
 	while (stack -> next)
 	{
 		next = stack -> next;
-		int_list_delete(stack);
+		stack_node_delete(stack);
 		stack = next;
 	}
-	int_list_delete(stack);
+	stack_node_delete(stack);
+	return ;
 }

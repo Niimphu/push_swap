@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:02:31 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/18 19:47:29 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/20 17:55:04 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ t_data	*rotate(t_data *set, char stack_id)
 	return (set);
 }
 
-t_int_list	*rotater(t_int_list *stack)
+t_stack	*rotater(t_stack *stack)
 {
-	t_int_list	*to_first;
-	t_int_list	*last;
+	t_stack	*to_first;
+	t_stack	*last;
 
-	last = int_list_last(stack);
+	last = stack_last(stack);
 	to_first = stack -> next;
 	stack -> next = NULL;
 	last -> next = stack;
@@ -44,11 +44,11 @@ t_data	*reverse_rotate(t_data *set, char stack_id)
 	return (set);
 }
 
-t_int_list	*reverse_rotater(t_int_list *stack)
+t_stack	*reverse_rotater(t_stack *stack)
 {
-	t_int_list	*to_first;
+	t_stack	*to_first;
 
-	to_first = (int_list_last(stack));
+	to_first = (stack_last(stack));
 	to_first -> next = stack;
 	while (stack -> next != to_first)
 		stack = stack -> next;

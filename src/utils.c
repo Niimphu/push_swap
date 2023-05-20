@@ -54,25 +54,23 @@ long long	ft_atoll_extended(int i, char *s, int sign)
 	return (r);
 }
 
-int	is_sorted(t_int_list *stack)
+int	is_sorted(t_stack *stack)
 {
 	int	i;
 
 	i = 1;
-	while (stack != int_list_last(stack))
+	while (stack)
 	{
 		if (stack -> index != i++)
 			return (0);
 		stack = stack -> next;
 	}
-	if (stack -> index != i++)
-		return (0);
 	return (1);
 }
 
-int	is_ordered(t_int_list *stack)
+int	is_ordered(t_stack *stack)
 {
-	t_int_list	*next;
+	t_stack	*next;
 
 	next = stack -> next;
 	while (next -> next)
@@ -87,7 +85,7 @@ int	is_ordered(t_int_list *stack)
 	return (1);
 }
 
-int	list_size(t_int_list *stack)
+int	list_size(t_stack *stack)
 {
 	int	n;
 

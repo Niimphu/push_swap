@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/19 19:08:05 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/20 18:17:22 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,56 +30,61 @@ typedef struct s_int_list
 {
 	int					number;
 	int					index;
+	int					distance_up;
+	int					distance_down;
+	int					cost[2];
 	struct s_int_list	*next;
-}						t_int_list;
+}						t_stack;
 
 typedef struct s_data
 {
-	t_int_list	*stack_a;
-	t_int_list	*stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 }				t_data;
 
 t_data		*init_stacks_struct(void);
-t_int_list	*init_stack_a(int argc, char *argv[]);
+t_stack		*init_stack_a(int argc, char *argv[]);
 int			validate(char *input[]);
-t_int_list	*create_list(char **input);
-void		index_stack(t_int_list *stack);
+t_stack		*create_list(char **input);
+void		index_stack(t_stack *stack);
 
 int			is_too_large(char *str);
 int			ft_isnum(char *str);
-int			is_stack_indexed(t_int_list *stack);
-t_int_list	*lowest_unindexed_node(t_int_list *stack);
+int			is_stack_indexed(t_stack *stack);
+t_stack		*lowest_unindexed_node(t_stack *stack);
 int			is_not_duplicate(char *argv[], int n);
 
-t_int_list	*int_list_new(char *number_string);
-t_int_list	*int_list_last(t_int_list *lst);
-void		int_list_append(t_int_list *lst, t_int_list *new);
-void		int_list_delete(t_int_list *lst);
-void		int_list_clear(t_int_list *stack);
+t_stack		*new_stack_node(char *number_string);
+t_stack		*stack_last(t_stack *lst);
+void		stack_append(t_stack *lst, t_stack *new);
+void		stack_node_delete(t_stack *lst);
+void		stack_clear(t_stack *stack);
 
 int			push_swap(t_data *set);
 t_data		*sort_three(t_data *set);
 t_data		*sort_list(t_data *set, int count);
+t_data		*pull_cheapest(t_data *set);
 
 t_data		*push_in_chunks(t_data *set, int count);
 t_data		*push_next_in_chunk(t_data *set, const int target_i);
+t_stack		*find_distances(t_stack *stack);
 
 t_data		*swap(t_data *set, char stack_id);
-t_int_list	*swapper(t_int_list *stack);
+t_stack		*swapper(t_stack *stack);
 t_data		*push(t_data *set, char stack_id);
-t_int_list	*pusher(t_int_list *stack_1, t_int_list *stack_2);
+t_stack		*pusher(t_stack *stack_1, t_stack *stack_2);
 
 t_data		*rotate(t_data *set, char stack_id);
-t_int_list	*rotater(t_int_list *stack);
+t_stack		*rotater(t_stack *stack);
 t_data		*reverse_rotate(t_data *set, char stack_id);
-t_int_list	*reverse_rotater(t_int_list *stack);
+t_stack		*reverse_rotater(t_stack *stack);
 
 long long	ft_atoll(const char *nptr);
-int			is_sorted(t_int_list *stack);
-int			is_ordered(t_int_list *stack);
-int			list_size(t_int_list *stack);
+int			is_sorted(t_stack *stack);
+int			is_ordered(t_stack *stack);
+int			list_size(t_stack *stack);
 
 void		print_set(t_data *set);
-void		print_stack(t_int_list *stack);
+void		print_stack(t_stack *stack);
 
 #endif

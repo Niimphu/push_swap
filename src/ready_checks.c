@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/17 15:37:29 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/20 18:02:44 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,34 +53,31 @@ int	is_not_duplicate(char *argv[], int n)
 	return (1);
 }
 
-int	is_stack_indexed(t_int_list *stack)
+int	is_stack_indexed(t_stack *stack)
 {
-	if (stack -> index == 0)
-		return (0);
-	while (stack != int_list_last(stack))
+	while (stack)
 	{
-		stack = stack -> next;
 		if (stack -> index == 0)
 			return (0);
+		stack = stack -> next;
 	}
 	return (1);
 }
 
-t_int_list	*lowest_unindexed_node(t_int_list *stack)
+t_stack	*lowest_unindexed_node(t_stack *stack)
 {
-	t_int_list	*ret;
+	t_stack	*ret;
 
-	while (stack -> index > 0 && stack -> next)
+	while (stack -> index > 0 && stack)
 		stack = stack -> next;
-	if (stack -> index == 0)
-		ret = stack;
-	else
+	if (!stack)
 		return (NULL);
-	while (stack != int_list_last(stack))
+	ret = stack;
+	while (stack)
 	{
-		stack = stack -> next;
-		if (stack -> number < ret -> number && stack -> index == 0)
+		if (stack -> number < ret -> number && !(stack -> index))
 			ret = stack;
+		stack = stack -> next;
 	}
 	return (ret);
 }

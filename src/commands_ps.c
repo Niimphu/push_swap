@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:59 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/18 19:47:29 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/20 17:54:16 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ t_data	*swap(t_data *set, char stack_id)
 	return (set);
 }
 
-t_int_list	*swapper(t_int_list *stack)
+t_stack	*swapper(t_stack *stack)
 {
-	t_int_list	*to_first;
+	t_stack	*to_first;
 
 	to_first = stack -> next;
 	stack -> next = to_first -> next;
@@ -35,7 +35,7 @@ t_int_list	*swapper(t_int_list *stack)
 
 t_data	*push(t_data *set, char stack_id)
 {
-	t_int_list	*temp;
+	t_stack	*temp;
 
 	if (stack_id == B)
 	{
@@ -55,9 +55,9 @@ t_data	*push(t_data *set, char stack_id)
 	return (set);
 }
 
-t_int_list	*pusher(t_int_list *stack_1, t_int_list *stack_2)
+t_stack	*pusher(t_stack *stack_1, t_stack *stack_2)
 {
-	t_int_list	*pushed;
+	t_stack	*pushed;
 
 	pushed = stack_1;
 	if (!stack_2)
