@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/20 20:06:01 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 05:10:55 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@
 # define B 'b'
 # define S 's'
 # define R 'r'
+# define UP 0
+# define DOWN 1
+# define BOTH 3
 
 typedef struct s_int_list
 {
 	int					number;
 	int					index;
-	int					distance_up;
-	int					distance_down;
+	int					distance[2];
 	int					cost[2];
 	struct s_int_list	*next;
 }						t_stack;
@@ -67,7 +69,11 @@ t_data		*pull_cheapest(t_data *set);
 
 t_data		*push_in_chunks(t_data *set, int count);
 t_data		*push_next_in_chunk(t_data *set, const int target_i);
+
 t_stack		*find_distances(t_stack *stack);
+t_data		*find_costs(t_data *set);
+t_stack		*find_min_moves(t_stack *target, t_stack *current);
+int			find_min_direction(int min_moves[], t_stack *stack);
 
 t_data		*swap(t_data *set, char stack_id);
 t_stack		*swapper(t_stack *stack);

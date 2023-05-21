@@ -60,9 +60,10 @@ t_data	*sort_list(t_data *set, int count)
 	return (set);
 }
 
+//TODO:
 t_data	*pull_cheapest(t_data *set)
 {
 	set -> stack_b = find_distances(set -> stack_b);
-	
+	set = find_costs(set);
 	return (set);
 }

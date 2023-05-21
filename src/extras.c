@@ -34,6 +34,7 @@ void	print_stack(t_stack *stack)
 	{
 		ft_printf("number: %i, ", stack -> number);
 		ft_printf("index: %i ", stack -> index);
+		ft_printf("\n");
 		stack = stack -> next;
 	}
 	return ;

@@ -19,8 +19,8 @@ t_stack	*new_stack_node(char *number_string)
 	new = malloc(sizeof(t_stack));
 	new -> number = ft_atoi(number_string);
 	new -> index = 0;
-	new -> distance_up = -1;
-	new -> distance_down = -1;
+	new -> distance[UP] = -1;
+	new -> distance[DOWN] = -1;
 	new -> cost[0] = -1;
 	new -> cost[1] = -1;
 	new -> next = NULL;
