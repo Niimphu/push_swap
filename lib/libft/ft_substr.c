@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /* This function allocates and returns a substring from the string 's',
-	define by the index 'start' and the maximum size 'len'.*/
+	define by the i 'start' and the maximum size 'len'.*/
 
 #include "libft.h"
 

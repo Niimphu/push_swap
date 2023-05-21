@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/21 05:10:55 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 18:49:30 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 typedef struct s_int_list
 {
 	int					number;
-	int					index;
-	int					distance[2];
+	int					i;
+	int					dist[2];
 	int					cost[2];
 	struct s_int_list	*next;
 }						t_stack;
@@ -53,7 +53,7 @@ void		index_stack(t_stack *stack);
 int			is_too_large(char *str);
 int			ft_isnum(char *str);
 int			is_stack_indexed(t_stack *stack);
-t_stack		*lowest_unindexed_node(t_stack *stack);
+t_stack		*lowest_unied_node(t_stack *stack);
 int			is_not_duplicate(char *argv[], int n);
 
 t_stack		*new_stack_node(char *number_string);
@@ -65,15 +65,15 @@ void		stack_clear(t_stack *stack);
 int			push_swap(t_data *set);
 t_data		*sort_three(t_data *set);
 t_data		*sort_list(t_data *set, int count);
-t_data		*pull_cheapest(t_data *set);
+t_data		*push_back_cheapest(t_data *set);
 
 t_data		*push_in_chunks(t_data *set, int count);
 t_data		*push_next_in_chunk(t_data *set, const int target_i);
 
-t_stack		*find_distances(t_stack *stack);
+t_stack		*find_dists(t_stack *stack);
 t_data		*find_costs(t_data *set);
 t_stack		*find_min_moves(t_stack *target, t_stack *current);
-int			find_min_direction(int min_moves[], t_stack *stack);
+int			find_min_direction(t_stack *stack);
 
 t_data		*swap(t_data *set, char stack_id);
 t_stack		*swapper(t_stack *stack);

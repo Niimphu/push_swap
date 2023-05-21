@@ -6,12 +6,12 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:25:42 by yiwong            #+#    #+#             */
-/*   Updated: 2023/02/11 17:49:59 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 18:49:24 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*This function applies the function 'f' to each character in string 's'. It
-	passes its index as the first argument to allocate and return a new
+	passes its i as the first argument to allocate and return a new
 	string that results from successive applications of 'f'.*/
 
 #include "libft.h"

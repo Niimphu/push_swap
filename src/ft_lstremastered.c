@@ -17,13 +17,13 @@ t_stack	*new_stack_node(char *number_string)
 	t_stack	*new;
 
 	new = malloc(sizeof(t_stack));
-	new -> number = ft_atoi(number_string);
-	new -> index = 0;
-	new -> distance[UP] = -1;
-	new -> distance[DOWN] = -1;
-	new -> cost[0] = -1;
-	new -> cost[1] = -1;
-	new -> next = NULL;
+	new->number = ft_atoi(number_string);
+	new->i = 0;
+	new->dist[UP] = -1;
+	new->dist[DOWN] = -1;
+	new->cost[0] = -1;
+	new->cost[1] = -1;
+	new->next = NULL;
 	return (new);
 }
 
@@ -31,8 +31,8 @@ t_stack	*stack_last(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst -> next)
-		lst = lst -> next;
+	while (lst->next)
+		lst = lst->next;
 	return (lst);
 }
 
@@ -48,7 +48,7 @@ void	stack_append(t_stack *lst, t_stack *new)
 		return ;
 	}
 	last = stack_last(lst);
-	last -> next = new;
+	last->next = new;
 	return ;
 }
 
@@ -65,9 +65,9 @@ void	stack_clear(t_stack *stack)
 {
 	t_stack	*next;
 
-	while (stack -> next)
+	while (stack->next)
 	{
-		next = stack -> next;
+		next = stack->next;
 		stack_node_delete(stack);
 		stack = next;
 	}

@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 19:03:44 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/20 18:02:44 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 18:49:30 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,27 @@ int	is_stack_indexed(t_stack *stack)
 {
 	while (stack)
 	{
-		if (stack -> index == 0)
+		if (stack->i == 0)
 			return (0);
-		stack = stack -> next;
+		stack = stack->next;
 	}
 	return (1);
 }
 
-t_stack	*lowest_unindexed_node(t_stack *stack)
+t_stack	*lowest_unied_node(t_stack *stack)
 {
 	t_stack	*ret;
 
-	while (stack -> index > 0 && stack)
-		stack = stack -> next;
+	while (stack->i > 0 && stack)
+		stack = stack->next;
 	if (!stack)
 		return (NULL);
 	ret = stack;
 	while (stack)
 	{
-		if (stack -> number < ret -> number && !(stack -> index))
+		if (stack->number < ret->number && !(stack->i))
 			ret = stack;
-		stack = stack -> next;
+		stack = stack->next;
 	}
 	return (ret);
 }

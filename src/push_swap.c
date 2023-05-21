@@ -17,9 +17,9 @@ int	push_swap(t_data *set)
 	int	count;
 	
 	print_set(set);
-	if (is_sorted(set -> stack_a))
+	if (is_sorted(set->stack_a))
 		return (0);
-	count = list_size(set -> stack_a);
+	count = list_size(set->stack_a);
 	if (count == 2)
 		(set = swap(set, A));
 	else if (count == 3)
@@ -27,7 +27,7 @@ int	push_swap(t_data *set)
 	else
 		set = sort_list(set, count);
 	print_set(set);
-	stack_clear(set -> stack_a);
+	stack_clear(set->stack_a);
 	free(set);
 	return (0);
 }
@@ -36,14 +36,14 @@ t_data	*sort_three(t_data *set)
 {
 	t_stack	*stack;
 
-	stack = set -> stack_a;
-	if (stack -> index > (stack -> next)-> index &&
-		stack -> index > ((stack -> next)-> next)-> index)
+	stack = set->stack_a;
+	if (stack->i > (stack->next)-> i &&
+		stack->i > ((stack->next)-> next)-> i)
 		set = rotate(set, A);
-	else if (stack -> index < (stack -> next)-> index &&
-		(stack -> next)-> index > ((stack -> next)-> next)-> index)
+	else if (stack->i < (stack->next)-> i &&
+		(stack->next)-> i > ((stack->next)-> next)-> i)
 		set = reverse_rotate(set, A);
-	if (!is_ordered(set -> stack_a))
+	if (!is_ordered(set->stack_a))
 		set = swap(set, A);
 	return (set);
 }
@@ -53,17 +53,22 @@ t_data	*sort_list(t_data *set, int count)
 {
 	push_in_chunks(set, count);
 	set = sort_three(set);
-	set -> stack_a = find_distances(set -> stack_a);
-	set -> stack_b = find_distances(set -> stack_b);
-	// while(set -> stack_b)
-	// 	set = pull_cheapest(set);
+	set->stack_a = find_dists(set->stack_a);
+	set->stack_b = find_dists(set->stack_b);
+	// while(set->stack_b)
+	set = push_back_cheapest(set);
 	return (set);
 }
 
 //TODO:
-t_data	*pull_cheapest(t_data *set)
+t_data	*push_back_cheapest(t_data *set)
 {
-	set -> stack_b = find_distances(set -> stack_b);
+	// t_stack	*cheapest;
+
+	set->stack_a = find_dists(set->stack_a);
+	set->stack_b = find_dists(set->stack_b);
 	set = find_costs(set);
+	// cheapest = find_cheapest(set->stack_b);
+	// set = push_back(set, cheapest);
 	return (set);
 }

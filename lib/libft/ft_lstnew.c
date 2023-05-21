@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 19:17:39 by yiwong            #+#    #+#             */
-/*   Updated: 2023/01/18 19:40:32 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 18:01:17 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new -> content = content;
-	new -> next = NULL;
+	new->content = content;
+	new->next = NULL;
 	return (new);
 }

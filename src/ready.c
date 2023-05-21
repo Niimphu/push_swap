@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/20 17:55:47 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 18:49:30 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_data	*init_stacks_struct(void)
 	set = malloc(sizeof(t_data));
 	if (!set)
 		return (NULL);
-	set -> stack_a = NULL;
-	set -> stack_b = NULL;
+	set->stack_a = NULL;
+	set->stack_b = NULL;
 	return (set);
 }
 
@@ -82,10 +82,10 @@ void	index_stack(t_stack *stack)
 	n = 1;
 	while (!is_stack_indexed(stack))
 	{
-		next = lowest_unindexed_node(stack);
+		next = lowest_unied_node(stack);
 		if (!next)
 			continue ;
-		next -> index = n++;
+		next->i = n++;
 	}
 	return ;
 }

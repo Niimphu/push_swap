@@ -61,9 +61,9 @@ int	is_sorted(t_stack *stack)
 	i = 1;
 	while (stack)
 	{
-		if (stack -> index != i++)
+		if (stack->i != i++)
 			return (0);
-		stack = stack -> next;
+		stack = stack->next;
 	}
 	return (1);
 }
@@ -72,15 +72,15 @@ int	is_ordered(t_stack *stack)
 {
 	t_stack	*next;
 
-	next = stack -> next;
-	while (next -> next)
+	next = stack->next;
+	while (next->next)
 	{
-		if (stack -> index > next -> index)
+		if (stack->i > next->i)
 			return (0);
 		stack = next;
-		next = stack -> next;
+		next = stack->next;
 	}
-	if (stack -> index > next -> index)
+	if (stack->i > next->i)
 		return (0);
 	return (1);
 }
@@ -92,9 +92,9 @@ int	list_size(t_stack *stack)
 	if (!stack)
 		return (0);
 	n = 1;
-	while (stack -> next)
+	while (stack->next)
 	{
-		stack = stack -> next;
+		stack = stack->next;
 		n++;
 	}
 	return (n);
