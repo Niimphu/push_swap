@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/21 21:46:17 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/22 00:27:33 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_data		*sort_list(t_data *set, int count);
 t_data		*push_back_cheapest(t_data *set);
 
 t_data		*push_in_chunks(t_data *set, int count);
-t_data		*push_next_in_chunk(t_data *set, const int target_i);
+t_data		*push_next_in_chunk(t_data *set, const int limit_i);
 t_stack		*find_target(t_stack *stack_a, int current_i);
 t_stack		*find_smallest(t_stack *stack_a);
 

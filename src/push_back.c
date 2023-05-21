@@ -67,14 +67,14 @@ t_data	*rotate_split(t_data *set, t_stack *cheap, t_stack *target)
 {
 	while (set->stack_a != target)
 	{
-		if (target->dist[UP] > target->dist[DOWN])
+		if (target->dist[UP] < target->dist[DOWN])
 			set = rotate(set, A);
 		else
 			set = reverse_rotate(set, A);
 	}
 	while (set->stack_b != cheap)
 	{
-		if (cheap->dist[UP] > cheap->dist[DOWN])
+		if (cheap->dist[UP] < cheap->dist[DOWN])
 			set = rotate(set, B);
 		else
 			set = reverse_rotate(set, B);

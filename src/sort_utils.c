@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:43:42 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/21 22:24:11 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/22 01:19:06 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ t_data	*push_in_chunks(t_data *set, int count)
 
 	if (start < 50)
 		chunks = 3;
+	else if (start < 101)
+		chunks = 4;
 	else
-		chunks = 10;
+		chunks = 5;
 	numerator = start * chunks;
 	while (numerator >= start)
 	{
@@ -40,9 +42,9 @@ t_data	*push_in_chunks(t_data *set, int count)
 	return (set);
 }
 
-t_data	*push_next_in_chunk(t_data *set, const int target_i)
+t_data	*push_next_in_chunk(t_data *set, const int limit_i)
 {	
-	while ((set->stack_a)-> i <= target_i)
+	while ((set->stack_a)->i <= limit_i)
 		set = rotate(set, A);
 	set = push(set, B);
 	return (set);
