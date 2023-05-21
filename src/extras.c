@@ -34,10 +34,6 @@ void	print_stack(t_stack *stack)
 	{
 		ft_printf("number: %i, ", stack->number);
 		ft_printf("i: %i ", stack->i);
-		ft_printf("up: %i ", stack->dist[0]);
-		ft_printf("down: %i ", stack->dist[1]);
-		ft_printf("direction: %i ", stack->cost[0]);
-		ft_printf("cost: %i ", stack->cost[1]);
 		ft_printf("\n");
 		stack = stack->next;
 	}

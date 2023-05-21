@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:03:56 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/21 18:49:30 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 21:46:17 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,20 @@ t_data		*push_back_cheapest(t_data *set);
 
 t_data		*push_in_chunks(t_data *set, int count);
 t_data		*push_next_in_chunk(t_data *set, const int target_i);
+t_stack		*find_target(t_stack *stack_a, int current_i);
+t_stack		*find_smallest(t_stack *stack_a);
 
 t_stack		*find_dists(t_stack *stack);
 t_data		*find_costs(t_data *set);
 t_stack		*find_min_moves(t_stack *target, t_stack *current);
+t_stack		*find_big_small(t_stack *s1, t_stack *s2, int size);
 int			find_min_direction(t_stack *stack);
+
+t_stack		*find_cheapest(t_stack *stack);
+t_data		*push_back(t_data *set, t_stack *cheapest);
+t_data		*rotate_to(t_data *set, t_stack *cheap, t_stack *target);
+t_data		*rev_rotate_to(t_data *set, t_stack *cheap, t_stack *target);
+t_data		*rotate_split(t_data *set, t_stack *cheap, t_stack *target);
 
 t_data		*swap(t_data *set, char stack_id);
 t_stack		*swapper(t_stack *stack);

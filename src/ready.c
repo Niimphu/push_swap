@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/21 18:49:30 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/21 22:24:21 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_data	*init_stacks_struct(void)
 t_stack	*init_stack_a(int argc, char *argv[])
 {
 	t_stack	*stack_a;
-	char		**input;
+	char	**input;
 
 	if (argc <= 1)
 		return (NULL);
@@ -61,7 +61,7 @@ int	validate(char *input[])
 
 t_stack	*create_list(char **input)
 {
-	int			i;
+	int		i;
 	t_stack	*stack_a;
 
 	i = 0;
@@ -76,7 +76,7 @@ t_stack	*create_list(char **input)
 
 void	index_stack(t_stack *stack)
 {
-	int			n;
+	int		n;
 	t_stack	*next;
 
 	n = 1;
