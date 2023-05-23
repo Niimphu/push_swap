@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 14:24:37 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/21 22:24:21 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/22 16:58:30 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	validate(char *input[])
 	{
 		if (!ft_isnum(input[i]) || !is_not_duplicate(input, i) || \
 			!is_too_large(input[i]))
-			return (ft_printf("Error\n"));
+			return (write(2, "Error\n", 6));
 		i++;
 	}
 	return (0);

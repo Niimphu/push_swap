@@ -63,13 +63,10 @@ void	stack_node_delete(t_stack *lst)
 
 void	stack_clear(t_stack *stack)
 {
-	t_stack	*next;
-
-	while (stack->next)
+	while (stack)
 	{
-		next = stack->next;
 		stack_node_delete(stack);
-		stack = next;
+		stack = stack->next;
 	}
 	stack_node_delete(stack);
 	return ;

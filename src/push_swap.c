@@ -25,8 +25,6 @@ int	push_swap(t_data *set)
 		set = sort_three(set);
 	else
 		set = sort_list(set, count);
-	stack_clear(set->stack_a);
-	free(set);
 	return (0);
 }
 
@@ -66,7 +64,6 @@ t_data	*sort_list(t_data *set, int count)
 	return (set);
 }
 
-//TODO:
 t_data	*push_back_cheapest(t_data *set)
 {
 	t_stack	*cheapest;
