@@ -6,7 +6,7 @@
 #    By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/05 01:55:51 by yiwong            #+#    #+#              #
-#    Updated: 2023/05/23 02:17:36 by yiwong           ###   ########.fr        #
+#    Updated: 2023/05/23 02:55:47 by yiwong           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,16 @@ BONUS_SRC = src/ready.c \
 			src/ready_checks.c \
 			src/push_swap.c \
 			src/sort_utils.c \
+			src/ft_lstremastered.c \
 			src/cost.c \
 			src/push_back.c \
-			src/ft_lstremastered.c \
 			src/commands_ps.c \
 			src/commands_r.c \
 			src/utils.c \
-			src/extras.c\
+			src/extras.c \
 			bonus/checker.c \
+			bonus/checker_cmds_r.c \
+			bonus/checker_cmds_ps.c \
 			lib/get_next_line/get_next_line.c \
 			lib/get_next_line/get_next_line_utils.c
 

@@ -63,15 +63,15 @@ t_data	*apply_command(t_data *set, char *input)
 		stack_id = INVALID;
 	else if (!ft_strncmp(input, "sa\n", 3) || !ft_strncmp(input, "sb\n", 3) ||
 		!ft_strncmp(input, "ss\n", 3))
-		set = swap(set, stack_id);
+		set = bonus_swap(set, stack_id);
 	else if (!ft_strncmp(input, "pa\n", 3) || !ft_strncmp(input, "pb\n", 3))
-		set = push(set, stack_id);
+		set = bonus_push(set, stack_id);
 	else if (!ft_strncmp(input, "ra\n", 3) || !ft_strncmp(input, "rb\n", 3) ||
 		!ft_strncmp(input, "rr\n", 3))
-		set = rotate(set, stack_id);
+		set = bonus_rotate(set, stack_id);
 	else if (!ft_strncmp(input, "rra\n", 4) ||
 		!ft_strncmp(input, "rrb\n", 4) || !ft_strncmp(input, "rrr\n", 4))
-		set = reverse_rotate(set, stack_id);
+		set = bonus_reverse_rotate(set, stack_id);
 	else
 		stack_id = INVALID;
 	if (stack_id == INVALID)
