@@ -32,18 +32,19 @@ int	main(int argc, char *argv[])
 t_data	*check(t_data *set)
 {
 	char	*input;
+	t_data	*new_set;
 
 	input = "\0";
-	while (ft_strncmp(input, "\n", 4))
+	while (input)
 	{
 		input = get_next_line(0);
-		set = apply_command(set, input);
-		if (!ft_strncmp(input, "\n", 1))
-		{
-			free_pointer(input);
-			break ;
-		}
+		if (input)
+			new_set = apply_command(set, input);
 		free_pointer(input);
+		if (new_set == NULL)
+			return (set);
+		else
+			set = new_set;
 	}
 	if (is_sorted(set->stack_a) && !set->stack_b)
 		ft_printf("OK\n");
@@ -75,7 +76,10 @@ t_data	*apply_command(t_data *set, char *input)
 	else
 		stack_id = INVALID;
 	if (stack_id == INVALID)
+	{
 		write(2, "Error\n", 6);
+		return (NULL);
+	}
 	return (set);
 }
 
