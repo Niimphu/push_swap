@@ -32,5 +32,4 @@ t_stack	*bonus_rotater(t_stack *stack);
 t_data	*bonus_reverse_rotate(t_data *set, char stack_id);
 t_stack	*bonus_reverse_rotater(t_stack *stack);
 
-
 #endif

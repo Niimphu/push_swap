@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:00:59 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/23 02:50:42 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/29 15:12:39 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ t_stack	*bonus_pusher(t_stack *stack_1, t_stack *stack_2)
 	if (!stack_2)
 	{
 		pushed->next = NULL;
-		stack_2 =pushed;
+		stack_2 = pushed;
 	}
 	else
 	{
 		pushed->next = stack_2;
-		stack_2 =pushed;
+		stack_2 = pushed;
 	}
 	return (stack_2);
 }
