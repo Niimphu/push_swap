@@ -6,7 +6,7 @@
 /*   By: yiwong <yiwong@student.42wolfsburg.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:43:42 by yiwong            #+#    #+#             */
-/*   Updated: 2023/05/22 01:19:06 by yiwong           ###   ########.fr       */
+/*   Updated: 2023/05/29 15:18:33 by yiwong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,8 @@ t_data	*push_in_chunks(t_data *set, int count)
 		}
 		numerator -= start;
 	}
-	while (count > 3)
-	{
+	while (list_size(set->stack_a) > 3)
 		set = push(set, B);
-		count--;
-	}
 	return (set);
 }
 

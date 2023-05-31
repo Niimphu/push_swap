@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 	stack_clear(set->stack_a);
 	stack_clear(set->stack_b);
 	free(set);
-	return(0);
+	return (0);
 }
 
 t_data	*check(t_data *set)
@@ -58,20 +58,18 @@ t_data	*apply_command(t_data *set, char *input)
 	int	stack_id;
 
 	stack_id = get_stack_id(input);
-	if (!ft_strncmp(input, "\n", 1))
-		return (set);
 	if (stack_id == INVALID)
 		stack_id = INVALID;
-	else if (!ft_strncmp(input, "sa\n", 3) || !ft_strncmp(input, "sb\n", 3) ||
-		!ft_strncmp(input, "ss\n", 3))
+	else if (!ft_strncmp(input, "sa\n", 3) || !ft_strncmp(input, "sb\n", 3)
+		|| !ft_strncmp(input, "ss\n", 3))
 		set = bonus_swap(set, stack_id);
 	else if (!ft_strncmp(input, "pa\n", 3) || !ft_strncmp(input, "pb\n", 3))
 		set = bonus_push(set, stack_id);
-	else if (!ft_strncmp(input, "ra\n", 3) || !ft_strncmp(input, "rb\n", 3) ||
-		!ft_strncmp(input, "rr\n", 3))
+	else if (!ft_strncmp(input, "ra\n", 3) || !ft_strncmp(input, "rb\n", 3)
+		|| !ft_strncmp(input, "rr\n", 3))
 		set = bonus_rotate(set, stack_id);
-	else if (!ft_strncmp(input, "rra\n", 4) ||
-		!ft_strncmp(input, "rrb\n", 4) || !ft_strncmp(input, "rrr\n", 4))
+	else if (!ft_strncmp(input, "rra\n", 4)
+		|| !ft_strncmp(input, "rrb\n", 4) || !ft_strncmp(input, "rrr\n", 4))
 		set = bonus_reverse_rotate(set, stack_id);
 	else
 		stack_id = INVALID;
@@ -85,6 +83,8 @@ t_data	*apply_command(t_data *set, char *input)
 
 int	get_stack_id(char *input)
 {
+	if (!ft_strncmp(input, "\n", 1))
+		return (INVALID);
 	if (input[1] == 'a' && ft_strlen(input) == 3)
 		return (A);
 	if (input[1] == 'b' && ft_strlen(input) == 3)
